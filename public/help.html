@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slidebar.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <style>
+        /* 中间部分 */
+        .center{
+            width:100%;
+            background:#fff;
+        }
+        .contentbox{
+            width:1200px;
+            margin:0px auto 20px;;
+            /* background:blueviolet; */
+        }
+        /* 面包屑导航 */
+        .comCrumb{
+            height:28px;
+            margin:5px 0 10px 0;
+            line-height:28px;
+            font-size:12px;
+            color:#666;
+        }
+        .comCrumb a{
+            color:#333;
+        }
+        .comCrumb span:last-child{
+            color:#D5182A;
+        }
+        .comCrumb a:after{
+            content:' > '
+        }
+        /* 中间内容部分 */
+        .contentbox .help_container{
+            /* height:100px; */
+            background:#f8f8f8;
+            margin-top:10px;
+            display:flex;
+            justify-content:space-between;
+            padding:3px 10px 10px 0;
+        }
+        /* 左侧部分 */
+        .contentbox .help_container .help_left{
+            width:210px;
+            height:763px;
+            background:#fff;
+            padding-bottom:15px;
+            border-bottom:2px solid #ff5f3e;
+        }
+        .contentbox .help_container .help_left>div{
+            height:30px;
+            position:relative;
+        }
+        .contentbox .help_container .help_left .h1{
+            height:38px;
+            line-height:38px;
+            background:#D6000C;
+            color:#fff;
+            font-size:16px;
+            text-indent:18px;
+            font-weight:bold;
+        }
+        .contentbox .help_container .help_left .h2 em{
+            display:inline-block;
+            width:6px;
+            height:6px;
+            background:#f0f0f0;
+            position: relative;
+            right:6px;
+            bottom:2px;
+        }
+        .contentbox .help_container .help_left .h2{
+            text-indent:10px;
+            line-height:30px;
+            font-size:14px;
+            color:#555;
+            border-bottom:1px solid #f3f3f3;
+            cursor:default;
+        }
+        .contentbox .help_container .help_left .h2:hover em{
+            background:#FE4819;
+        }
+        .contentbox .help_container .help_left .h3{
+            font-size:12px;
+            color:#666;
+            line-height:30px;
+            padding-left:32px;
+            cursor:pointer;
+        }
+        .contentbox .help_container .help_left .h3:hover{
+            background:#f9f9f9;
+            color:#ff5f3e;
+        }
+        .contentbox .help_container .help_left .h3:hover em{
+            background:#ff5f3e;
+        }
+        .contentbox .help_container .help_left .h3 em{
+            display:inline-block;
+            width:3px;
+            height:30px;
+            line-height:30px;
+            position:absolute;
+            left:0px;
+            /* background:gray; */
+            margin-right:32px;
+        }
+        /* 右侧部分 */
+        .contentbox .help_container .help_right{
+            width:970px;
+            height:auto;
+            background:#fff;
+            padding:12px;
+            /* position:relative; */
+        }
+        .contentbox .help_container .help_right>div{
+            background:#fff;
+            /* display:none; */
+            /* position:absolute; */
+        }
+        .hide{
+            display:none;
+        }
+        /* .contentbox .help_container .help_right #content1~div{
+            background:aqua;
+        } */
+        .contentbox .help_container .help_right p{
+            color:#555;
+            font-size:12px;
+        }
+        .contentbox .help_container .help_right a{
+            color:#ff5f3e;
+            padding:0 3px;
+        }
+        .contentbox .help_container .help_right .faq .faq_question a{
+            display:inline-block;
+            width:470px;
+            height:50px;
+            line-height:50px;
+        }
+        .contentbox .help_container .help_right .how_pay a{
+            color:rgb(51,102,255);
+        }
+        .contentbox .help_container .help_right .stjmfws>div>p:first-child{
+            line-height:55px;
+        }
+        .contentbox .help_container .help_right .stjmfws>div p{
+            font-size:26px;
+        }
+        .contentbox .help_container .help_right .stjmfws>div p span{
+            color:#ff0000;
+        }
+        .contentbox .help_container .help_right .stjmfws>div p a{
+            color:#000;
+            padding:0 3px;
+        }
+        .contentbox .help_container .help_right .thh .thh_title{
+            height:56px;
+            line-height:56px;
+            text-align:center;
+            border:solid 1px #D6D6D6;
+            margin-bottom:12px;
+        }
+        .contentbox .help_container .help_right .thh .thh_liucheng{
+            height:40px;
+            line-height:40px;
+            font-size:20px;
+            background:#f6f6f6;
+            border:solid 1px #D6D6D6;
+            text-align:center;
+            color:#555;
+        }
+        .contentbox .help_container .help_right .thh .thh_liucheng_six{
+            /* height:56px; */
+            padding:20px 16px;
+            border:solid 1px #D6D6D6;
+            border-top:0;
+        }
+        .contentbox .help_container .help_right .thh .thh_liucheng_six a{
+            display:inline-block;
+            width:120px;
+            height:42px;
+            font-size:14px;
+            text-align:center;
+            box-sizing:content-box;
+            padding:12px 3px;
+            border:1px solid #ff0000;
+            color:#ff0000;
+            font-weight:bold;
+        }
+        .contentbox .help_container .help_right .thh .thh_liucheng_six a:hover{
+            background:#ff0000;
+            color:#fff;
+        }
+        .contentbox .help_container .help_right .thh .thh_liucheng_box>p{
+            color:#ff5f3e;
+            font-size:16px;
+            line-height:50px;
+        }
+        .contentbox .help_container .help_right .thh .thh_thanks{
+            height:46px;
+            line-height:46px;
+            color:#fff;
+            background:#F1070B;
+            font-size:18px;
+            text-align:center;
+        }
+        .contentbox .help_container .help_right .lxkf .lxkf_title{
+            padding-left:20px;
+            color:#666;
+            font-size:18px;
+            line-height:50px;
+            height:50px;
+            border-bottom:1px solid #cecece;
+        }
+        .contentbox .help_container .help_right .lxkf .consult_box{
+            padding:10px 0;
+            display:flex;
+            justify-content:space-between;
+        }
+        .contentbox .help_container .help_right .lxkf .consult_box>div{
+            width:286px;
+            height:165px;
+            border:1px solid #cecece;
+            text-align:center;
+        }
+        .contentbox .help_container .help_right .lxkf .consult_box>div p:first-child{
+            font-size:18px;
+            margin-top:22px;
+
+        }
+        .contentbox .help_container .help_right .lxkf .consult_box>div p:nth-child(2){
+            font-size:14px;
+            color:#666;
+            margin-top:12px;
+            padding:0 15px;
+        }
+        .contentbox .help_container .help_right .lxkf .consult_box>div a{
+            display:inline-block;
+            width:94px;
+            height:24px;
+            line-height:24px;
+            background:#e82b39;
+            color:#fff;
+            border-radius:5px;
+            margin-top:15px;
+        }
+        .contentbox .help_container .help_right .lxkf .yellow_box{
+            padding:20px;
+            background:#fff6bf;
+            margin:20px 0;
+        }
+        .contentbox .help_container .help_right .lxkf .yellow_box p{
+            font-size:14px;
+        }
+        .contentbox .help_container .help_right .lxkf .yellow_box .box_title{
+            color:#ff0000;
+            margin:10px 0;
+        }
+        .contentbox .help_container .help_right .lxkf .yellow_box .box_content{
+            padding-left:10px;
+        }
+        .contentbox .help_container .help_right .lxkf .cjwt_title{
+            height:50px;
+            line-height:50px;
+            padding-left:20px;
+            border-bottom:1px solid #cecece;
+            font-size:18px;
+            color:#666;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box>div{
+            margin-bottom:25px;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box{
+            padding:20px 20px 0 20px;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box>div p{
+            color:#666;
+            font-size:14px;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box span{
+            padding:0 3px;
+            color:#fff;
+            border-radius:2px;
+            margin-right:4px;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box .question{
+            margin-bottom:5px;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box .question span{
+            background:#16b75d;
+        }
+        .contentbox .help_container .help_right .lxkf .question_box .answer span{
+            background:#12a4d0;
+        }
+        .contentbox .help_container .help_right .understand img{
+            margin:18px 0;
+        }
+        .contentbox .help_container .help_right .recruit_followers>div{
+            border-bottom:1px solid #666;
+            padding:15px 0;
+        }
+        .contentbox .help_container .help_right .recruit_followers>div p{
+            font-size:14px;
+        }
+        .contentbox .help_container .help_right .recruit_followers>div .job_title{
+            margin:20px 0;
+        }
+        .contentbox .help_container .help_right .recruit_followers>div .job_title span{
+            background:rgb(255, 255, 0);
+        }
+        .contentbox .help_container .help_right .call_us p:last-child{
+            font-size:14px;
+            color:rgb(212,70,64);
+            font-weight:bold;
+        }
+        .contentbox .help_container .help_right .privacy_statement>div{
+            margin-bottom:10px;
+        }
+        .contentbox .help_container .help_right .privacy_statement>div p{
+            font-size:14px;
+        }
+        .contentbox .help_container .help_right .privacy_statement>div .ys_title{
+            font-weight:bold;
+            color:#555;
+        }
+        .contentbox .help_container .help_right .privacy_statement>div .ys_box{
+            text-indent:10px;
+        }
+        .contentbox .help_container .help_right .privacy_statement .three .ys_box{
+            margin-bottom:10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部容器，长黑框 -->
+    <div class="topNav">
+        <!-- 顶部中间部分1200px -->
+        <div class="topNavbox">
+            <!-- 顶部黑框左侧 -->
+            <div class="topNavLeft">
+                <img src="img/index/ewms.png" alt="">
+                <span>购酒网APP</span>
+                <em>﹀</em>
+            </div>
+            <!-- 顶部黑框右侧 -->
+            <div class="topNavRight">
+                <ul>
+                    <li>
+                        Hi,请
+                        <a href="">登录</a>/
+                        <a href="">注册</a>
+                    </li>
+                    <li class="other">|</li>
+                    <li><a href="">我的订单</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">个人中心</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">在线客服</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">购酒公告</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">帮助</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">提意见</a></li>
+                    <li class="other">|</li>
+                    <li>
+                        <a href="">
+                            <em>☏</em> 400-722-1919
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部黑框下长banner图 -->
+    <div class="top_img">
+        <a href="">
+            <img src="img/top_banner.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo，搜索框，购物车 -->
+    <div class="logoItems">
+        <a class='logo_img' href=""><img src="img/logo.jpg" alt=""></a>
+        <a class='activity_img' href=""><img src="img/logo-activity.gif" alt=""></a>
+        <div class='search'>
+            <div class="search_top">
+                <div class="search_top_left">
+                    <input type="text" placeholder="茅台飞天">
+                </div>
+                <div class="search_top_right">
+                    搜索
+                </div>
+            </div>
+            <div class="search_foot">
+                <ul>
+                    <li><a href="">茅台</a></li>
+                    <li><a href="">五粮液</a></li>
+                    <li><a href="">拉菲</a></li>
+                    <li><a href="">奔富</a></li>
+                    <li><a href="">洋河</a></li>
+                    <li><a href="">黄尾袋鼠</a></li>
+                    <li><a href="">剑南春</a></li>
+                    <li><a href="">泸州老窖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='shopping_car'>
+            <a class="shopping_car_nr" href="">
+                <span class="shopping_car_icon"></span>
+                <span class="shopping_car_text">去购物车结算</span>
+                <span class="shopping_car_num">0</span>
+            </a>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="itemNav">
+        <ul>
+            <li>
+                <a class="list_item" href="">
+                    ☰&nbsp;&nbsp;全&nbsp;部&nbsp;分&nbsp;类
+                </a>
+                <ul class="qbfl_list" style="display:none">
+                    <li>
+                        <a href="">
+                            <img src="img/ax-icon.png" alt="">
+                            <span>一键选购</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/bj-icon.png" alt="">
+                            <span>白 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/ptj-icon.png" alt="">
+                            <span>葡 萄 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/yj-icon.png" alt="">
+                            <span>洋 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/hj-icon.png" alt="">
+                            <span>黄 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/ysj-icon.png" alt="">
+                            <span>清 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/pj-icon.png" alt="">
+                            <span>啤 酒</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/jjzb-icon.png" alt="">
+                            <span>酒具周边</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/xp-icon.png" alt="">
+                            <span>新 品</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/qingcang.png" alt="">
+                            <span>清 仓</span>
+                        </a>
+                        <em>›</em>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav"><a href="">首页</a></li>
+            <li class="nav"><a href="">特卖会</a></li>
+            <li class="nav"><a href="">进口馆</a></li>
+            <li class="nav"><a href="">居酒屋</a></li>
+            <li class="nav"><a href="caigou.html">商家采销</a></li>
+            <li class="nav"><a href="">高端收藏</a></li>
+            <li class="nav"><a href="">茅台年份酒</a></li>
+            <li class="nav"><a href="">尾货直批</a></li>
+        </ul>
+        <div class="itemNav_right">
+            <a href="">
+                <img src="img/qctj.gif" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- 中间部分 -->
+    <div class="center">
+        <div class="contentbox">
+            <!-- 面包屑导航 -->
+            <div class="comCrumb">
+                <span>您当前的位置:</span>
+                <a href="index.html">首页</a>
+                <span>帮助中心</span>
+            </div>
+            <!-- 中间内容部分 -->
+            <div class="help_container">
+                <!-- 左侧部分 -->
+                <div class="help_left">
+                    <div class="h1">帮助中心</div>
+                    <div class="h2">
+                        <em></em>
+                        新手上路
+                    </div>
+                    <div data-toggle="tab" data-id="content1" class="h3">
+                        <em></em>
+                        用户协议
+                    </div>
+                    <div data-toggle="tab" data-id="content2" class="h3">
+                        <em></em>
+                        常见问题
+                    </div>
+                    <div data-toggle="tab" data-id="content3" class="h3">
+                        <em></em>
+                        网站购物流程
+                    </div>
+                    <div data-toggle="tab" data-id="content4" class="h3">
+                        <em></em>
+                        会员制度
+                    </div>
+                    <div class="h2">
+                        <em></em>
+                        如何付款
+                    </div>
+                    <div data-toggle="tab" data-id="content5" class="h3">
+                        <em></em>
+                        如何付款
+                    </div>
+                    <div data-toggle="tab" data-id="content6" class="h3">
+                        <em></em>
+                        发票制度说明
+                    </div>
+                    <div data-toggle="tab" data-id="content7" class="h3">
+                        <em></em>
+                        电子券说明
+                    </div>
+                    <div data-toggle="tab" data-id="content8" class="h3">
+                        <em></em>
+                        虚拟账户支付
+                    </div>
+                    <div class="h2">
+                        <em></em>
+                        配送方式
+                    </div>
+                    <div data-toggle="tab" data-id="content9" class="h3">
+                        <em></em>
+                        配送收费标准
+                    </div>
+                    <div data-toggle="tab" data-id="content10" class="h3">
+                        <em></em>
+                        配送时间
+                    </div>
+                    <div data-toggle="tab" data-id="content11" class="h3">
+                        <em></em>
+                        货到付款支持城市
+                    </div>
+                    <div data-toggle="tab" data-id="content12" class="h3">
+                        <em></em>
+                        实体加盟服务商
+                    </div>
+                    <div class="h2">
+                        <em></em>
+                        售后服务
+                    </div>
+                    <div data-toggle="tab" data-id="content13" class="h3">
+                        <em></em>
+                        如何办理退换货
+                    </div>
+                    <div data-toggle="tab" data-id="content14" class="h3">
+                        <em></em>
+                        如何退还货
+                    </div>
+                    <div data-toggle="tab" data-id="content15" class="h3">
+                        <em></em>
+                        联系客服
+                    </div>
+                    <div class="h2">
+                        <em></em>
+                        关于我们
+                    </div>
+                    <div data-toggle="tab" data-id="content16" class="h3">
+                        <em></em>
+                        了解购酒网
+                    </div>
+                    <div data-toggle="tab" data-id="content17" class="h3">
+                        <em></em>
+                        招兵买马
+                    </div>
+                    <div data-toggle="tab" data-id="content18" class="h3">
+                        <em></em>
+                        联系我们
+                    </div>
+                    <div data-toggle="tab" data-id="content19" class="h3">
+                        <em></em>
+                        隐私声明
+                    </div>
+                </div>
+                <!-- 右侧部分 -->
+                <div class="help_right">
+                    <!-- 用户协议 -->
+                    <div id="content1" class="user_agreement">
+                        <p class="user_title">用户协议</p>
+                        <p>
+                            一、购酒网服务条款的确认和接纳<br>
+                            购酒网gjw.com(以下简称本站)的各项电子服务的所有权和运作权归本站。本站提供的服务将完全按照其发布的服务条款和操作规则严格执行。用户必须完全同意所有服务条款并完成注册程序，才能成为本站的正式用户。用户确认：本协议条款是处理双方权利义务的当然约定依据，除非违反国家强制性法律，否则始终有效。在下订单的同时，您也同时承认了您拥有购买这些产品的权利能力和行为能力，并且将您对您在订单中提供的所有信息的真实性负责。
+                        </p>
+                        <p>
+                            二、服务简介<br>
+                            本站运用自己的操作系统通过国际互联网络为用户提供网络服务。同时，用户必须：<br>
+                            (1)自行配备上网的所需设备，包括个人电脑、调制解调器或其他必备上网装置。<br>
+                            (2)自行负担个人上网所支付的与此服务有关的电话费用、网络费用。<br><br>
+                            注册者资格<br>
+                            (1)您确认，在您完成注册程序或以其他购酒网允许的方式实际使用网店服务时，您应当是年满18周岁（自然人），具备完全民事权利能力、完全民事行为能力和能独立承担民事责任的自然人、法人或其他合法组织。若您不具备前述主体资格，则您及您的监护人应承担因此而导致的一切后果，且购酒网有权注销（冻结）您的账户，并向您及您的监护人索偿。<br><br>
+                            基于本站所提供的网络服务的重要性，用户应同意：<br>
+                            (1)提供详尽、准确的个人资料。<br>
+                            (2)不断更新注册资料，符合及时、详尽、准确的要求。<br><br>
+                            本站不公开用户的姓名、地址、电子邮箱和笔名， 除以下情况外：<br>
+                            (1)用户授权本站透露这些信息。<br>
+                            (2)相应的法律及程序要求本站提供用户的个人资料。<br><br>
+                            如果用户提供的资料包含有不正确的信息，本站保留结束用户使用网络服务资格的权利。<br>
+                        </p>
+                        <p>
+                            三、订单<br>
+                            (1)在您下订单时，请您仔细确认所购商品的名称、价格、数量、型号、规格、尺寸、联系地址、电话、收货人等信息。收货人与用户本人不一致的，收货人的行为和意思表示视为用户的行为和意思表示，用户应对收货人的行为及意思表示的法律后果承担连带责任。<br>
+                            (2)除法律另有强制性规定外，双方约定如下：本站上销售方展示的商品和价格等信息仅仅是交易信息的发布，您下单时须填写您希望购买的商品数量、价款及支付方式、收货人、联系方式、收货地址等内容；系统生成的订单信息是计算机信息系统根据您填写的内容自动生成的数据，仅是您向销售方发出的交易诉求；销售方收到您的订单信息后，只有在销售方将您在订单中订购的商品从仓库实际直接向您发出时（以商品出库为标志），方视为您与销售方之间就实际直接向您发出的商品建立了交易关系；如果您在一份订单里订购了多种商品并且销售方只给您发出了部分商品时，您与销售方之间仅就实际直接向您发出的商品建立了交易关系；只有在销售方实际直接向您发出了订单中订购的其他商品时，您和销售方之间就订单中该其他已实际直接向您发出的商品才成立交易关系。您可以随时登录您在本站注册的账户，查询您的订单状态。<br>
+                            (3)由于市场变化及各种以合理商业努力难以控制的因素的影响，本站无法保证您提交的订单信息中希望购买的商品都会有货；如您拟购买的商品，发生缺货，您有权取消订单。<br>
+                        </p>
+                        <p>
+                            四、送货及费用<br>
+                            本站将会根据系统自动选择配送方式，把产品送到您所指定的送货地址，本站不接受用户对第三方物流配送公司的指定。所有在本站上列出的送货时间为参考时间，参考时间的计算是根据库存状况、正常的处理过程和送货时间、送货地点的基础上估计得出的。送货费用根据您选择的配送方式的不同而异。<br><br>
+                            请清楚准确地填写您的真实姓名、送货地址及联系方式。因如下情况造成订单延迟或无法配送等，本站将不承担责任：<br><br>
+                            (1)客户提供错误信息和不详细的地址；<br>
+                            (2)货物送达无人签收，由此造成的重复配送所产生的费用及相关的后果。<br>
+                            (3)不可抗力，例如：自然灾害、交通戒严、突发战争等。<br>
+                        </p>
+                        <p>
+                            五、服务条款的修改<br>
+                            本站将可能不定期的修改本用户协议的有关条款，一旦条款及服务内容产生变动，本站将会在重要页面上提示修改内容。如果不同意本站对条款内容所做的修改，用户可以主动取消获得的网络服务。如果用户继续使用本站的服务，则视为接受服务条款的变动。本站保留随时修改或中断服务而不需告知用户的权利。本站行使修改或中断服务的权利，不需对用户或第三方负责。<br>
+                        </p>
+                        <p>
+                            六、用户隐私制度<br>
+                            尊重用户个人隐私是本站的一项基本政策。所以，作为对以上第二点人注册资料分析的补充，本站一定不会在未经合法用户授权时公开、编辑或透露其注册资料及保存在本站中的非公开内容，除非有法律许可要求或本站在诚信的基础上认为透露这些信件在以下四种情况是必要的：<br><br>
+                            (1)遵守有关法律规定，遵从本站合法服务程序。<br>
+                            (2)保持维护本站的商标所有权。<br>
+                            (3)在紧急情况下竭力维护用户个人和社会大众的隐私安全。<br>
+                            (4)符合其他相关的要求。<br>
+                        </p>
+                        <p>
+                            七.用户的帐号，密码和安全性<br>
+                            用户一旦注册成功，成为本站的合法用户，将得到一个密码和用户名。您可随时根据指示改变您的密码。用户将对用户名和密码安全负全部责任。另外，每个用户都要对以其用户名进行的所有活动和事件负全责。用户若发现任何非法使用用户帐号或存在安全漏洞的情况，请立即通告本站。<br>
+                        </p>
+                        <p>
+                            八、拒绝提供担保<br>
+                            用户个人对网络服务的使用承担风险。本站对此不作任何类型的担保，不论是明确的或隐含的，但是不对商业性的隐含担保、特定目的和不违反规定的适当担保作限制。本站不担保服务一定能满足用户的要求，也不担保服务不会受中断，对服务的及时性，安全性，出错发生都不作担保。本站对在本站上得到的任何商品购物服务或交易进程，不作担保。<br>
+                        </p>
+                        <p>
+                            九、有限责任<br>
+                            本站对任何直接、间接、偶然、特殊及继起的损害不负责任，这些损害可能来自：不正当使用网络服务，在网上购买商品或进行同类型服务，在网上进行交易，非法使用网络服务或用户传送的信息有所变动。这些行为都有可能会导致本站的形象受损，所以本站事先提出这种损害的可能性。<br>
+                        </p>
+                        <p>
+                            十、对用户信息的存储和限制<br>
+                            本站不对用户所发布信息的删除或储存失败负责。本站有判定用户的行为是否符合本站服务条款的要求和精神的保留权利，如果用户违背了服务条款的规定，本站有中断对其提供网络服务的权利。<br>
+                        </p>
+                        <p>
+                            十一、用户与社区管理<br>
+                            第1条 本社区命名为"购酒网社区"。<br>
+                            第2条 本社区所有权、经营权均属本站。<br>
+                            第3条 本社区的管理维护由本站社区部门负责。<br>
+                            第4条 在本站注册的用户，可成为购酒网社区注册用户（以下简称"社区用户"），拥有社区用户基本权限。<br>
+                            第5条 本社区用户的个人资料受到保护，不接受任何个人或单位的查询请求，公安机关和司法部门或根据国家相关法律 规定提供除外。<br>
+                            第6条 本社区用户享有在社区各公开栏目发表言论的权利，若栏目中有特殊规定，或受到社区处罚 而关闭发言权限则例外。<br>
+                            第7条 本社区用户有义务遵守国家法律法规及本社区各项规章制度。<br>
+                            第8条 本社区用户有义务遵守网络礼仪。<br>
+                            第9条 社区用户享有言论自由权利；并适度拥有修改、删除自己发表的文章的权利。<br>
+                            第10条 本社区用户不得在本社区发表包含以下内容的言论：<br>
+                            &nbsp;&nbsp;（1）煽动抗拒、破坏宪法和法律、行政法规实施的；<br>
+                            &nbsp;&nbsp;（2）煽动颠覆国家政权，推翻社会主义制度的；<br>
+                            &nbsp;&nbsp;（3）煽动分裂国家、破坏国家统一的；<br>
+                            &nbsp;&nbsp;（4）煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+                            &nbsp;&nbsp;（5）任何包含对种族、性别、宗教、地域内容等歧视的；<br>
+                            &nbsp;&nbsp;（6）捏造或者歪曲事实，散布谣言，扰乱社会秩序的；<br>
+                            &nbsp;&nbsp;（7）宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；<br>
+                            &nbsp;&nbsp;（8）公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；<br>
+                            &nbsp;&nbsp;（9）损害国家机关信誉的；<br>
+                            &nbsp;&nbsp;（10）其他违反宪法和法律行政法规的。<br>
+                        </p>
+                    </div>
+                    <!-- 常见问题 -->
+                    <div id="content2" class="faq hide">
+                        <p class="faq_title">常见问题</p>
+                        <div class="faq_question">
+                            <a href="#1">·运费如何计算</a>
+                            <a href="#2">·购酒网使用何种物流服务?</a>
+                            <a href="#3">·支持货到付款吗?</a>
+                            <a href="#4">·不注册可以购买商品吗?</a>
+                            <a href="#5">·退货的贷款如何退回?</a>
+                            <a href="#6">·怎么样办理退换货?</a>
+                            <a href="#7">·订单确认以后多长时间发货</a>
+                            <a href="#8">·优惠券如何使用</a>
+                            <a href="#9">·注册输入验证码后提示“验证码不正确”,怎样解决?</a>
+                        </div>
+                        <div class="faq_answer">
+                            <div id="1" class="help_box">
+                                <p>运费如何计算?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>运费根据用户选择的送货方式、商品总价和收货城市这3个条件来计算，购物车内商品满100元免运费(不发货地区除外)。</p>
+                            </div>
+                            <div id="2" class="help_box">
+                                <p>购酒网使用何种物流服务?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>购酒网支持的送货方式有：快递送货上门、物流送货上门、上门自提等，通常选择宅急便，赛澳递速递和宅急送的快递。</p>
+                            </div>
+                            <div id="3" class="help_box">
+                                <p>支持货到付款吗?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>购酒网支持全国货到付款，但不是所有的区域货到付款服务都可以送到，具体请查看支持货到付款的城市。</p>
+                            </div>
+                            <div id="4" class="help_box">
+                                <p>不注册可以购买商品吗?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>不可以，建议您在购酒网注册账户登录购买，可以获得购酒网向您提供的优惠价格。</p>
+                            </div>
+                            <div id="5" class="help_box">
+                                <p>退货的贷款如何退回?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>网上付费的情况，退货款会退回到您所使用的支付方式，如果您是用网银支付，会直接退回到您所使用的银行账户，如果您使用支付宝这种预存款支付服务， 会退回到余额中。货到付款的情况，我们的客服会与您商定具体的退款方式。</p>
+                            </div>
+                            <div id="6" class="help_box">
+                                <p>怎么样办理退换货?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>需要办理退换货请首先联系我们的客服，400-722-1919。具体事宜我们的客服同事会详细和您沟通。</p>
+                            </div>
+                            <div id="7" class="help_box">
+                                <p>订单确认以后多长时间发货</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>购酒网将在订单审核完毕后的72小时以内发货，递送时间将按照您生成订单时指定的时间进行配送，请您保持联系方式畅通,如果遇到法定假日请关注购酒网的通知。</p>
+                            </div>
+                            <div id="8" class="help_box">
+                                <p>优惠券如何使用</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>购酒网不定期的会通过各种渠道向用户发送购酒网的优惠券，优惠券都会包含面值，消费限额和有效时间。消费限额的含义是订单金额达到消费限额时，才能使用该优惠券。每张订单只能使用一张优惠券。优惠券可以直接在购入过程中使 用。取消订单后优惠券将作废处理。</p>
+                            </div>
+                            <div id="9" class="help_box">
+                                <p>注册输入验证码后提示“验证码不正确”,怎样解决?</p>
+                                <p class="help_item_title">TOP</p>
+                                <p>请按以下步骤操作：关闭所有购酒网页面，Internet选项中清除所有cookie，关闭浏览器，重开浏览器，进入购酒网注册页，同时按Ctrl和F5键刷新注册页，即可成功验证。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 网站购物流程 -->
+                    <div id="content3" class="shopping_process hide">
+                        <p>
+                            网站购物流程<br>
+                            一、用户注册<br>
+                            点击页面顶部“注册”，进入注册页面。<br><br>
+                            注册帐号后能使用诸多实用功能，方便您的购物<br><br>
+                            电子邮件通知订单处理状态<br>
+                            在线查看修改订单<br>
+                            收藏关注商品<br>
+                            电子券管理<br>
+                            还能通过邮件收到购酒网送出的意外惊喜，如最新购酒网促销电子邮件，或是精美小礼品哦！<br>
+                        </p>
+                        <p>
+                            二、商品浏览<br>
+                            1.分类目录检索<br>
+                            在购酒网页面的顶端和左侧提供了多种物品分类方式，如种类，价格，特价，热卖。您只要点击进入相应的分类目录就能浏览查看商品详情。<br><br>
+                            2.关键字搜索<br>
+                            您可以利用页面顶端的搜索功能，输入您想要的物品的名称，快速搜索商品。<br>
+                        </p>
+                        <p>
+                            三、使用购物车<br>
+                            1.添加商品到购物车<br>
+                            在您浏览查看商品时，只要点击“购物车”图标或“加入购物车”按钮，就可以轻松把中意的宝贝放入到购物车中。随后您可以接着逛，也可以付款提交订单。此时页面顶端的“购物车”图标会显示商品数量。<br><br>
+                            注：有时商品热卖，难免会缺货，不要紧，您只要点击“缺货登记”，就能在第一时间邮件或电话得到商品的上架消息。<br><br>
+                            2.管理购物车里的商品<br>
+                            您可以点击页面顶端的“购物车”图标，查看购物车里的商品详情。比如商品编号、商品名称、单价、总价、数量、赠送积分和购物总价，点击商品名称可以查看详细商品描述。您还可以删除商品，修改商品数量，收藏商品方便下次再逛。<br><br>
+                            注：要查看收藏的商品，登陆后，点击页面顶端的“用户中心”—“我的收藏夹”。<br>
+                        </p>
+                        <p>
+                            四、确认订单<br>
+                            订单内容由以下内容组成：<br><br>
+                            “收货人信息”：是保证准确、快速送递商品的重要信息，请仔细核对填写“收货人”、“收货地址”、“电话”和“最佳配送时间”<br><br>
+                            “配送方式”：提供了多种快递服务，请您选择适合自己的方式。<br>
+                            “付款方式”：提供了多种支付方式，有货到付款、在线支付和银行汇款。<br>
+                            “商品清单”和“费用总计”：清晰显示你即将购买的商品以及将要支付的商品总额，获得的相应积分和优惠。<br>
+                            当您确定以上信息无误，请点击“提交订单”。
+                        </p>
+                    </div>
+                    <!-- 会员制度 -->
+                    <div id="content4" class="membership_system hide">
+                        <p>
+                            会员制度<br>
+                            1、会员级别<br>
+                            &nbsp;&nbsp;会员级别分为普通会员、铜牌酒友、银牌酒友、金牌酒友和VIP（暂未开放）五种，系统根据规则自动升降，无需申请，可登录“
+                            <a href="user_login.html">会员中心</a>”查询等级。 
+                        </p>
+                        <br>
+                        <p>2、会员资格的获取和权益</p>
+                        <p class="level">普通会员</p>
+                        <p>
+                            申请条件：任何愿意到购酒网购物的用户都可以免费注册。<br>
+                            待 &nbsp;&nbsp;&nbsp;&nbsp; 遇：可以享受注册会员所能购买的产品及服务。（如商品有会员等级价促销活动，可登录后在商品详情页面查看相应的价格）
+                        </p>
+                        <p class="level">铜牌酒友</p>
+                        <p>
+                            申请条件：12个月有过成功消费的会员，金额在100-3999元之间（以确认收货并付款为准）。<br>
+                            待 &nbsp;&nbsp;&nbsp;&nbsp; 遇：可以享受铜牌会员级别所能购买的产品及服务。 （如商品有会员等级价促销活动，可登录后在商品详情页面查看相应的价格）
+                        </p>
+                        <p class="level">银牌酒友</p>
+                        <p>
+                            申请条件：12个月内消费金额在4000-9999元（含）的会员。 <br>
+                            待 &nbsp;&nbsp;&nbsp;&nbsp; 遇：可以享受银牌会员级别所能购买的产品及服务。（如商品有会员等级价促销活动，可登录后在商品详情页面查看相应的价格）
+                        </p>
+                        <p class="level">金牌酒友</p>
+                        <p>
+                            申请条件：12个月内消费金额超过10000元（含）。<br>
+                            待 &nbsp;&nbsp;&nbsp;&nbsp; 遇：可以享受金牌会员级别所能购买的产品及服务。（如商品有会员等级价促销活动，可登录后在商品详情页面查看相应的价格）
+                        </p>
+                    </div>
+                    <!-- 如何付款 -->
+                    <div id="content5" class="how_pay hide">
+                        <p>如何付款</p>
+                        <p>1.货到付款：</p><br>
+                        <p>由购酒网指定的物流公司配送员送货上门，客户收单验货后，直接将货款交给配送员的一种结算方式。（注：目前暂未开通刷卡服务，货到后需要现金支付）</p><br>
+                        <p>目前购酒网已在全国范围2000多城镇开通货到付款服务，请在“配送与付款方式”中选择“货到付款”。</p><br>
+                        <p><a href="">点此查看</a> 购酒网货到付款开通城市范围。</p><br>
+                        <p>2.第三方支付平台：</p><br>
+                        <p>目前购酒网支持“支付宝”支付服务。</p><br>
+                        <p>支付宝</p><br>
+                        <p><a href="">点此查看</a>支付宝合作机构</p><br>
+                        <p><a href="">点此查看</a>支付宝帮助中心</p><br>
+                        <p>3.网上银行</p><br>
+                        <p>通过国内各大银行，官方网站在线支付平台支付，只要您开通了您的银行卡的“网上银行”功能，就能轻松完成在线支付。</p><br>
+                        <p>支持银行：中国工商银行、招商银行、中国建设银行、中国银行、中国农业银行、广东发展银行、兴业银行、浦发银行、中国民生银行、交通银行。</p><br><br>
+                        <p>如有问题请咨询购酒网7×12小时客服400-722-1919。</p>
+                    </div>
+                    <!-- 发票制度说明 -->
+                    <div id="content6" class="invoice hide">
+                        <p>发票制度说明</p>
+                        <p>1.索取发票</p><br><br>
+                        <p>请您在订单确认页面的下方选择开发票，发票将随商品一同送到。</p><br><br>
+                        <p>2.发票抬头</p><br>
+                        <p>发票抬头不能为空，您可以填写个人或单位名称，例如：上海购酒网电子商务有限公司</p><br><br>
+                        <p>3.发票内容</p><br>
+                        <p>发票内容可选择酒水、明细。</p><br><br>
+                        <p>4.发票补开时效</p><br>
+                        <p>如需要补开发票，请联系客服。</p>
+                    </div>
+                    <!-- 电子券说明 -->
+                    <div id="content7" class="ticket hide">
+                        <p>电子券说明</p>
+                        <p>1. 如何获取电子券</p>
+                        <p>◆ 站内发放：参加购酒网的抽奖，将有机会得到电子券</p>
+                        <p>◆ 站内发放：网站举行返券促销活动，当购物车的应付商品金额（不含运费）满足一定金额时，下单并支付后将会获得电子券</p>
+                        <p>◆ 活动发放：与购酒网合作的各网站，在举办活动时，以各种形式发放购酒网电子券</p><br>
+                        <p>２. 如何查看电子券</p>
+                        <p>◆ 登录购酒网账户进入“用户中心”，点击左侧“我的电子券”，即可查看“未使用电子券”和“已使用电子券”以及电子券类型等信息</p><br>
+                        <p>３. 如何使用电子券</p>
+                        <p><a href="">请点击查看帮助文档。</a></p><br>
+                        <p>４. 电子券使用规则</p>
+                        <p>◆ 每张订单只能使用一张电子券，使用后若放弃支付订单，如果订单使用的是优惠券，优惠券将作废处理；</p>
+                        <p>◆ 电子券仅限授权商品范围使用，部分特价品、折扣商品不可使用电子券；</p>
+                        <p>◆ 电子券必须在有效期内使用，过期作废，电子券中，满减性质的优惠券不能兑换现金；</p>
+                        <p>◆ 使用电子券支付的订单，发生退货由用户自行承担运费，退款结算按照实际结算金额退款，电子券不能用来抵扣商品运费；</p>
+                        <p>◆ 本规则最终解释权归购酒网所有,您若有疑问，请拨打免费客服电话：400-722-1919</p>
+                    </div>
+                    <!-- 虚拟账户 -->
+                    <div id="content8" class="virtual_account hide">
+                        <p>虚拟账户支付</p>
+                        <p>如何支付：</p>
+                        <p>虚拟账户是您在购酒网的专属账户；您在购酒网购物多支付的部分等金额都会存入您在购酒网虚拟账户中，您可以在购酒网购物时使用。</p><br>
+                        <p>您使用现金账户支付订单时，可以同时享受应有的优惠政策；</p><br>
+                        <p>如何使用虚拟账户支付：</p>
+                        <p>1）如果您需要通过虚拟账户余额支付订单，请您选择支付方式为“账户余额支付”（注：如果您的账户中没有余额则不能使用该项支付方式）；</p>
+                        <p>2）您可以在输入框内填写自己需要抵扣的金额。最大抵扣金额不能超过账户本身余额。了解更多支付方式请<a>点击查看</a></p>
+                        <p>3）订单发货后无法再使用虚拟账户余额对订单进行支付；</p>
+                        <p>4）您可以进入购酒网 “用户中心”中查看您的虚拟账户余额。</p>
+                        <p>5)如果现金账户余额不足以支付订单的全部金额，您还需要用其他支付方式来支付剩余金额；</p>
+                        <p>6)您使用现金账户支付订单时，可以同时享受应有的优惠政策；</p>
+                        <p>7)现金账户的余额不能被提出，您如果对订单进行了退货，订单金额中使用现金账户支付的金额将被退回您的现金账户。</p><br>
+                        <img src="img/help/xnzh.jpg" alt="">
+                    </div>
+                    <!-- 配送收费标准 -->
+                    <div id="content9" class="charge hide">
+                        <p>配送收费标准</p>
+                        <p>本站配送区域仅限中国大陆</p><br>
+                        <p>自2013年1月28日10:00起,在购酒网购买酒水 实行每张订单 满100免运费的政策（香港、澳门、台湾、钓鱼岛地区和拆分订单除外）</p>
+                    </div>
+                    <!-- 配送时间 -->
+                    <div id="content10" class="delivery_time hide">
+                        <p>配送时间</p><br>
+                        <p>&nbsp;&nbsp一般情况下购酒网将在订单审核完毕后的48小时以内发货，递送时间将按照您生成订单时指定的时间进行配送，请您保持联系方式畅通。</p><br>
+                        <p>&nbsp;&nbsp;遇到节庆、大促销及不可预测的原因时，发货会略有延迟，敬请谅解。</p><br>
+                        <p>&nbsp;&nbsp;如有特殊需求请致电客服电话：400-722-1919。</p>
+                    </div>
+                    <!-- 货到付款支持城市 -->
+                    <div id="content11" class="hdfk_city hide">
+                        <p>货到付款支持城市</p>
+                        <p>如您在订单确认页面 不能使用货到付款功能，请确认您所在地区是否支持次功能。</p><br>
+                        <p>您可登录宅急送官方网站查询您所在的区域是否支持货到付款</p><br>
+                        <p><a href="">http://www.zjs.com.cn/WS_Business/WS_Bussiness_CityArea.aspx?id=6</a></p><br>
+                        <p>如有不便，请见谅！</p>
+                    </div>
+                    <!-- 实体加盟服务商 -->
+                    <div id="content12" class="stjmfws hide">
+                        <p>实体加盟服务商</p>
+                        <div>
+                            <p>购酒网实体加盟服务商列表:</p>
+                            <p>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=16" target="_blank">1.<span>购酒网</span>(南京店)</a>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=11" target="_blank">2.<span>购酒网</span>(深圳店)</a>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=20" target="_blank">3.<span>购酒网</span>(温州店)</a>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=21" target="_blank">4.<span>购酒网</span>(南昌店)</a><br>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=28" target="_blank">5.<span>购酒网</span>(营口店)</a>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=29" target="_blank">6.<span>购酒网</span>(石家庄店)</a>
+                                <a href="http://mwx.gjw.com/wxshop/index.aspx?id=30" target="_blank">7.<span>购酒网</span>(潮州店)</a>
+                            </p>
+                        </div>
+                        
+                    </div>
+                    <!-- 如何办理退换货 -->
+                    <div id="content13" class="blthh hide">
+                        <p>如何办理退换货</p>
+                        <p>退换货承诺</p>
+                        <p>因购酒网和购酒网所选物流在发货和运输途中造成酒品的渗漏，破损等情况，购酒网为您提供人性化的退换货服务。</p><br>
+                        <p>退换货流程</p>
+                        <p>为保障您的权益，请与配送员当面核对商品种类、数量、规格、赠品、金额是否与订单一致，准确无误再签收。配送员离开后，购酒网将不再为以上问题负责。如果退货，请将发票也一并寄回。换货不需寄回发票。 </p>
+                        <img src="img/help/thh.jpg" alt="">
+                    </div>
+                    <!-- 如何退换货 -->
+                    <div id="content14" class="thh hide">
+                        <p>如何退换货</p>
+                        <div class="thh_title">如何办理退换帮助指南</div>
+                        <div class="thh_liucheng">退换货流程</div>
+                        <div class="thh_liucheng_six">
+                            <a href="#thh_1">①阅读如何<br>退换货</a>
+                            <a href="#thh_2">②进入我的订单<br>申请退换货</a>
+                            <a href="#thh_3">③填写退/换货<br>数量及原因</a>
+                            <a href="#thh_4">④填写退/换货地<br>地址及收款方式</a>
+                            <a href="#thh_5">⑤客服确认后买家<br>邮寄商品至公司</a>
+                            <a href="#thh_6">⑥耐心等待办理<br>换货/退款</a>
+                        </div>
+                        <div class="thh_liucheng_box">
+                            <p id="thh_1">一、阅读如何退换货说明，符合要求的可以根据以下步骤去办理。</p>
+                            <p id="thh_2">二、买家登陆后点击页面左上角我的订单,按流程点击申请售后。</p>
+                            <img src="img/help/thh_1.png" alt=""><br>
+                            <p id="thh_3">三、买家根据实际情况选择退换货原因，写清数量，情况说明可以上传图片附件。退货买家请写清客户收款方式，等待与客服的确认。</p>
+                            <img src="img/help/thh_2.png" alt="">
+                            <p id="thh_4">四、换货买家写清客户收货地址，如有变更请注明；</p>
+                            <img src="img/help/thh_3.png" alt="">
+                            <p id="thh_5">五、退换货买家在与客服沟通协商好后5天内按照以下要求去填写退换货快递信息，买家可以登陆用户中心的我的退换货查询后期进度。</p>
+                            <img src="img/help/thh_4.png" alt="">
+                            <p id="thh_6">六、填写好相应资料的买家请您耐心等待，我们会在收到快递后的3-7个工作日内完成补发货和退款，请及时关注我的退换货进程。</p>
+                            <img src="img/help/thh_5.png" alt="">
+                        </div>
+                        <div class="thh_thanks">感谢您对我们购酒网的支持与信赖，真诚的期待您提出宝贵的意见，我们力求做得更好，欢迎您下次继续光临。</div>
+                    </div>
+                    <!-- 联系客服 -->
+                    <div id="content15" class="lxkf hide">
+                        <p class="lxkf_title">联系客服</p>
+                        <div class="consult_box">
+                            <div>
+                                <p>售前人工咨询</p>
+                                <p>为您提供商品挑选、购买、活动咨询、会员账号注册、账户信息维护等咨询。</p>
+                                <a href="">售前咨询</a>
+                            </div>
+                            <div>
+                                <p>售后人工咨询</p>
+                                <p>为您提供商品挑选、购买、活动咨询、会员账号注册、账户信息维护等咨询。</p>
+                                <a href="">售后咨询</a>
+                            </div>
+                            <div>
+                                <p>投诉与建议</p>
+                                <p>为您提供商品挑选、购买、活动咨询、会员账号注册、账户信息维护等咨询。</p>
+                                <a href="">投诉建议</a>
+                            </div>
+                        </div>
+                        <div class="yellow_box">
+                            <p class="box_title">客服邮箱</p>
+                            <p class="box_content">
+                                购酒网网客服中心受理邮箱：<a href="">kf@goujiuwang.com </a><br>
+                                如您提交的是订单和退换货相关问题，请在邮件中注明订单号和联系方式以便我们查询，我们将在一个工作日内给予回复。 
+                            </p>
+                            <p class="box_title">客服电话</p>
+                            <p class="box_content">
+                                购酒网的客服电话为400-722-1919，免长途话费。<br><br>
+                                购酒网万人官方QQ群：119100652<br><br>
+                                客服电话工作时间为周一至周日，9:00-21:00。<br><br>
+                                我们将随时为您献上真诚的服务。
+                            </p>
+                        </div>
+                        <div class="cjwt_title">常见问题</div>
+                        <div class="question_box">
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询买酒有没有优惠？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，我司这边酒水极其优惠了，以页面显示为主，如您大批量订购，十箱或者单笔订单上万元，这边可与我司经理协商价格问题。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询这个酒有没有手提袋？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，厂商给我司酒水有手提袋的，我司这边都是会给您配带的。以收到实物为准。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询需要整箱原箱发货？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，由于原箱发货，快递运输破损率较高，我司这边暂不支持原箱发货，我司会用购酒网的箱子进行加固包装。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询运费问题？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边以您提交订单为准，我司一般是满百包邮的。偏远地区下单需谨慎，路途遥远，快递运输容易破损。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询我所处的地区有现货嘛？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，我司统一从上海发货的。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询酒保不保真？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，我司酒水均是正品，支持任何方式检测，请您安心购买。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询到我这边大概需要多少天？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，以快递运输速度为准，一般情况是3-5天左右，感谢您对购酒网的支持与关注，祝您购酒愉快！ （上海是隔天到，江浙綄地区大概三天左右，大部分地区3-5天，偏远地区5天左右）
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询这个酒是不是几几年产的？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，我司酒水出库生产日期随机，不支持指定年份。具体以收到实物为准。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询某款酒水什么时候有货？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边需要您多多关注我司页面，一旦酒水有货，我司这边会在页面上架。
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询为什么我优惠劵使用不了？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边您是哪款优惠劵？不同的优惠劵使用条件不同，使用时不需要输入卡号和密码，只需要在优惠劵左边的小圈圈点击下即可。感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询为什么我货收到了，无法进行评论呢？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边订单号给我下，我这边为您操作下，可能系统稍有延迟，请见谅，感谢您对购酒网的支持与关注，祝您购酒愉快！
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询我的订单下了好几天了，怎么还没发货或者确认呢？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边订单号给我下，我这边查看下，如正常会尽快催促安排发出，请您耐心等候，感谢您对购酒网的支持与关注，祝您购酒愉快！（下单后正常情况72小时内安排发出
+                                </p>
+                            </div>
+                            <div>
+                                <p class="question">
+                                    <span>问</span>
+                                    客户咨询为什么防伪标签受损？
+                                </p>
+                                <p class="answer">
+                                    <span>答</span>
+                                    您好，这边您联系下我司售后，可将订单号与破损照片传至我司售后邮箱，kf@goujiuwang.com 售后会为您处理。感谢您对购酒网的支持与关注，祝您购酒愉快！ （您好可能是快递野蛮运输，导致标签破损的）
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 了解购酒网 -->
+                    <div id="content16" class="understand hide">
+                        <p>了解购酒网</p>
+                        <img src="img/help/lj_1.jpg" alt="">
+                        <p>购酒网隶属于购酒网（上海）供应链管理有限公司，是一家专业从事酒类产品的推广、销售、物流的综合性集团公司。真诚、理解、合作、进取是企业的理念，用心卖好酒是企业的宗旨。</p>
+                        <img src="img/help/lj_2.jpg" alt="">
+                        <p>一个崭新的、适应全球化战略的网上酒类王国正在建设中，一流的人才，一流的管理，一流的产品，一流的服务为企业的迅速扩张奠定了基础。企业整合全球酒类名品资源，抢占酒类专营产品和服务的制高点。</p>
+                        <img src="img/help/lj_3.jpg" alt="">
+                        <p>
+                            根据天猫数据魔方统计，购酒网连续三年双十一，销量位居前三。<br>
+                            我们的战略目标是：2020年成为国际性酒类网上交易平台。现公司有员工逾百名，公司仓储面积（含实体面积）达20000平方米，用心把实惠方便奉献给消费者。
+                        </p>
+                        <img src="img/help/lj_4.jpg" alt="">
+                        <p>
+                            2011年08月   购酒网正式上线。开启一家由传统贸易公司，往渠道品牌化公司的转型之路。<br>
+                            2012年06月   购酒网全渠道布局完成。和阿里、腾讯、亚马逊等等众多互联网企业达成深度战略合作。<br>
+                            2012年11月   购酒网品牌化转型完成。通过行业标杆节日（双十一），一炮而红。在消费者于厂家中取得很高的传播效应，使购酒网品牌知名度大幅度提升。<br>
+                            2013年09月   购酒网用户数破百万。B2C板块有效用户数突破1000000名。奠定酒类零售渠道中的领先地位。<br>
+                            2013年12月   启动周年庆购酒节。B2C板块实现销售，利润翻倍增长。根据行业官方数据统一，是唯一一家盈利型企业。<br>
+                            2014年12月   多元化布局启动。与茶叶行业资深人士及公司合资成立茶叶项目，开启购酒网多元化品牌之路。<br>
+                            2015年04月   华东自有仓储、办公一体化园区建成。购酒网自建超3万平米，集仓储、办公一体化新型购酒网大楼竣工，正式投入使用。可实现日订单处理量达20000单。<br>
+                            2015年11月  购酒网与知名公司达成战略合作。购酒网与知名公司达成战略合作。双十一当日，全渠道合计实现销售额高达5.5亿元。<br>
+                            2016年03月  多元化之路加大。舒心品牌项目上线，以舍予由心为品牌核心定位，面向广大用户。<br>
+                            2016年07月  舒心酱香酒。成为酱香型亲民化白酒互联网销售第一品牌。<br>
+                            2016年08月  购酒网成立进口酒事业部。与多家酒庄合资或入股，携旗下品牌法比纳、黑狮古堡、牧场主、皇族雄狮等等入驻进口酒领域，提供多元化服务。
+                        </p>
+                        <img src="img/help/lj_5.jpg" alt="">
+                    </div>
+                    <!-- 招兵买马 -->
+                    <div id="content17" class="recruit_followers hide">
+                        <p>招兵买马</p>
+                        <div>
+                            <p class="job_title"><span>1. 美工/平面设计/网页设计</span></p>
+                            <p>
+                                职位职责：<br>
+                                1、负责店铺的产品优化，包括产品描述、页面设计、分类设计等。<br>
+                                2、负责不定期对淘宝和其他第三方电子商务平台店铺装修、版面调、分类等。<br>
+                                3、负责对店铺的产品做出相对应的销售Banner以及广告页面。<br>
+                                4、负责对店铺的宣传页、产品专题页、店铺促销页面等进行美工设计。<br>
+                                任职资格：<br>
+                                1. 大专以上学历，1年以上的设计工作经验；<br>
+                                2. 熟练掌握相关的软件，如：Photoshop、Illustrator等；<br>
+                                3. 有一定美术功底，平面设计、网页设计专业及相关经验者优先；<br>
+                                4. 沟通能力强，有较强的执行能力和团队合作精神。
+                            </p>
+                        </div>
+                        <div>
+                            <p class="job_title"><span>2. 京东运营 网站运营</span></p>
+                            <p>
+                                任职要求：<br>
+                                1、负责与京东平台运营人员接洽沟通，做好各方面配合工作；<br>
+                                2、负责京东店铺整体运营，完成销售指标；<br>
+                                3、负责京东店铺促销活动、关联销售等的策划，提升店铺转化率；<br>
+                                4、负责京东店铺销售情况的统计跟踪，并定期进行总结，提出改进措施；<br>
+                                5、熟悉天猫、京东、一号店、当当等电商平台后台的操作的优先录用；<br>
+                                任职资格：<br>
+                                1.大专以上学历，1-2年京东商城运营经验，精通京东商城网店后台操作及各类网络营销方法；<br>
+                                2.熟悉京东的运营环境、京东制定的交易规则、京东的推广、京东网站广告资源；<br>
+                                3.对京东会员的购物心理有充分的认知，有较强的市场感知能力，敏锐的把握市场动态方向。<br>
+                                4. 有一定的视觉审美能力和较强的逻辑分析能力，善于数据分析；<br>
+                                5. 基础运营技能坚实，沟通能力优秀，能够和平台运营做好衔接，有效促进销售；<br>
+                                6.思维清晰、反映敏捷，具有创新精神、良好的职业操守，能承受一定的工作压力；<br>
+                                7.热爱电子商务，工作认真积极，责任心强，处事灵活，协调能力佳，有良好的团队合作精神。
+                            </p>
+                        </div>
+                        <div>
+                            <p class="job_title"><span>3. .net 软件工程师</span></p>
+                            <p>
+                                【工作职责】<br>
+                                1、负责电子商务公司网站及内部系统开发；<br>
+                                2、负责网站的程序开发及代码优化；<br>
+                                3、负责相关程序、文档编写以及后期维护。<br>
+                                4、内部系统的开发、维护<br>
+                                5、二次开发和新开发都有<br>
+                                【任职要求】<br>
+                                1、大专以上学历，计算机、电子信息技术及其相关专业；<br>
+                                2、2-3年以上WEB程序开发工作经验；<br>
+                                3、扎实的软件开发基础，可以灵活运用数据结构和常用算法；<br>
+                                4、熟悉C#或VB.net、webservice、XML、PHP等技术体系；<br>
+                                5、熟悉Web开发技术、精通面向对象设计。
+                            </p>
+                        </div>
+                        <div>
+                            <p class="job_title"><span>4. 天猫运营 店长</span></p>
+                            <p>
+                                岗位职责：<br>
+                                1.购酒网天猫官方旗舰店的运营工作；<br>
+                                2.店铺促销活动策划及执行、店铺销售数据分析；<br>
+                                3.售前、售后问题分析及处理；<br>
+                                4.与淘宝小二建立良好沟通关系，争取并利用好推广资源；<br>
+                                5.独立负责某产品线，完成销量及店铺DSR指标。<br>
+                                任职资格：<br>
+                                1、有大型天猫旗舰店成功运营经验者优先；<br>
+                                2、熟悉天猫规则，熟悉淘宝工具，了解淘宝客户购物习惯及心理；<br>
+                                3、抗压力强，能够独立应付突发状况及运营指标；<br>
+                                4.责任心强，对于发现店铺中存在的问题能够及时处理；
+                            </p>
+                        </div>
+                        <div>
+                            <p class="job_title"><span>5. 网页设计</span></p>
+                            <p>
+                                岗位职责：<br>
+                                1、负责移动客户端的界面设计；<br>
+                                2、负责网页美工切图和html5页面制作工作；<br>
+                                3、规范公司产品在用户体验上的统一性和一致性，编写、维护和更新产品的相关设计文档和规范；<br>
+                                任职资格：<br>
+                                1、两年以上视觉设计经验，能够熟练、独立完成Web端产品设计和移动端产品设计工作；<br>
+                                2、能够实时把握Web网页设计和移动端设计的流行趋势，充分理解UI设计中体现产品的视觉整体性，注重细节的处理；<br>
+                                3、精通HMTL5标签、DIV+CSS制作网页、Web2.0标准以及浏览器的兼容特性；<br>
+                                4、精通Photoshop、Coreldraw、Illustrator等图形软件，以及Dreamweaver、html5等网页制作工具，能够快速独立完成html5页面的制作工作；<br>
+                                5、优秀的审美能力和深厚的美术功底，熟悉图标设计，有手绘能力者优先；<br>
+                                6、出色的设计表达能力，能及时提出高品质创意设计方案，并快速完成作品设计；<br>
+                                7、责任心强，工作一丝不苟、踏实认真，能够承受一定的工作压力；<br>  
+                                8、具有良好的沟通能力和团队精神，能够很好地和产品经理、开发人员协作；请提供个人设计作品或者作品链接。
+                            </p>
+                        </div>
+                        <div>
+                            <p class="job_title"><span>6. 手机软件开发工程师</span></p>
+                            <p>
+                                工作内容：<br>
+                                1、负责IOS平台的应用设计、开发和调试；<br>
+                                2、 能够独立开发IOS应用程序；<br>
+                                3、 维护和优化相关的产品的质量、性能、用户体验。<br>
+                                岗位要求：<br>
+                                1、专科以上学历；<br>
+                                2、精通JAVA语言开发，至少两年以上的IOS开发经验；<br>
+                                3、精通IOS开发平台及框架原理；<br>
+                                4、熟悉各种机型的兼容性调试；<br>
+                                5、热爱编程，具备较强的编程能力和良好的编码风格；<br>
+                                6、具备良好的团队合作精神、较好的沟通能力、高度的责任感，具有较强的抗压能力； 7、对移动互联网有浓厚的兴趣，拥有创造顶级产品的激情。<br>
+                                8、有电子商务相关开发产品优先考虑 工作地点：松江区洞泾镇茂盛路202弄18号（近松江大学城地铁站） 简历投递处:32938740@qq.com 
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 联系我们 -->
+                    <div id="content18" class="call_us hide">
+                        <p>联系我们</p>
+                        <p>购酒网全国客服电话：400-722-1919 / 021-58771919</p>
+                        <p>周一至周日 8:30-21:00，节假日不休息，免长途话费</p>
+                        <p>地址：上海市松江区百颗星工业园茂盛路202弄18号（近沪松公路卖新公路）</p>
+                        <p> 网站推广商务合作（非酒水销售类合作）：zhigang.wang@goujiuwang.com</p>
+                    </div>
+                    <!-- 隐私声明 -->
+                    <div id="content19" class="privacy_statement hide">
+                        <p>隐私声明</p>
+                        <div>
+                            <p class="ys_title">提示条款</p>
+                            <p class="ys_box">在您在此站购买商品或服务之前，请您务必仔细阅读并透彻理解本政策，在确认充分理解并同意后使用 相关产品或服务。一旦您开始使用各项产品或服务，即表示您已充分理解并同意本政策。如对本政策内 容有任何疑问、意见或建议，您可通过购酒网反馈页面与我们联系。另外本站的隐私申明正在不断改进中，随着我站服务范围的扩大，我们会随时更新我们的隐私申明。我们欢迎您随时会来查看本申明。</p>
+                        </div>
+                        <div>
+                            <p class="ys_title">关于您的隐私：</p>
+                            <p class="ys_box">购酒网：指购酒网(上海)供应链管理有限公司提供者运营的网站及客户端（如手机m.gjw.com、app 端等）。</p>
+                            <p class="ys_box">个人信息：指以电子或者其他方式记录的能够单独或者与其他信息结合识别特定自然人身份或者反 映特定自然人活动情况的各种信息。 </p>
+                            <p class="ys_box">个人敏感信息：包括身份证件号码、个人生物识别信息、银行账号、财产信息、行踪轨迹、交易信 息、未成年人。注：未成年人的特别注意事项：如果您未满18周岁，您无权使用公司服务，因此我们希 望您不要向我们提供任何个人信息。</p>
+                        </div>
+                        <div class="three">
+                            <p class="ys_title">交易状态时隐私权利：</p>
+                            <p class="ys_box">1.用户名和密码：</p>
+                            <p class="ys_box">当您打算注册成用户后，我们要求您选择一个用户名和密码，还要提供密码提示问题及其答案以便在您丢失密码后我们可以确认您的身份。您只能通过您的密码来使用您的帐号。如果您泄漏了密码，您可能丢失了您的个人识别信息，并且有可能导致对您不利的司法行为。因此不管任何原因使您的密码安全受到危及，您应该立即和我们取得联系。</p>
+
+                            <p class="ys_box">2.注册信息：</p>
+                            <p class="ys_box">当您在注册为用户时，我们要求您填写一张注册表。注册表要求提供您的真实姓名，地址，电话号码，和电子邮件地址。如果您是公司客户，您还被要求提供您的公司的地址，电话号码和贵公司的服务和产品的简短说明。您还有权选择来填写附加信息。这些信息可能包括您公司所在的省份和城市，时区和邮政编码，传真号码，主页和您的职务。我们使用注册信息来获得用户的统计资料。我们将会用这些统计数据来给我们的用户分类，以便有针对性地向我们的用户提供新的服务。我们会通过您的邮件地址来通知您这些新的服务。</p>
+
+                            <p class="ys_box">3、您的交易行为：</p>
+                            <p class="ys_box">我们跟踪IP地址仅仅只是为了安全的必要。如果我们没有发现任何安全问题，我们会及时删除我们收集到的IP地址。我们还跟踪全天的页面访问数据。全天页面访问数据被用来反映网站的流量，一是我们可以为未来的发展制定计划（例如，增加服务器）。二是确定客户的真实需求，以便及时服务于你。</p>
+
+                            <p class="ys_box">4、 第三方：</p>
+                            <p class="ys_box">我们不会向任何第三方提供，出售，出租，分享和交易用户的个人信息，除非第三方和购酒网一起为网站和用户提供服务并且在该服务结束后已将被禁止访问包括其以前能够访问的所有这些资料。当我们被法律强制或依照政府要求提供您的信息时我们将善意地披露您的资料。</p>
+
+                            <p class="ys_box">5、网站外部链接：</p>
+                            <p class="ys_box">本站含有到其他网站的链接。购酒网对那些网站的隐私保护措施不负任何责任。我们可能在任何需要的时候增加商业伙伴或共用品牌的网站，但是提供给他们的将仅仅是综合信息，我们将不会公开您的身份。</p>
+
+                            <p class="ys_box">6、安全：</p>
+                            <p class="ys_box">我们网站有相应的安全措施来确保我们掌握的信息不丢失，不被滥用，不被变更伪造。这些安全措施包括向其它服务器备份数据和对用户密码加密。尽管我们有这些安全措施，但请注意在因特网上不存在“完善的安全措施”。</p>
+
+                            <p class="ys_box">7、修改您的资料：</p>
+                            <p class="ys_box">您在成功登录之后，可以随时在购酒网的网站修改或者更新你的个人信息和密码。</p>
+                            <p class="ys_box">8、联系我们：</p>
+                            <p class="ys_box">如果你对本隐私申明或购酒网的隐私保护措施以及您在使用中的问题有任何意见和建议。免费咨询电话：400-722-1919如果您对我们的回复不满意，特别是您认为我们的个人信息处理行为损害了您的合法权益，<u>您还可以通过向被告住所地有管辖权的法院提起诉讼来寻求解决方案。</u></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="footer_top">
+            <div class="mid_box">
+                <div class="footer_h_top">
+                    <div class="tel"></div>
+                    <a href="">
+                        <img src="img/onlineServ.png" alt="">
+                    </a>
+                    <div class="address">
+                        <div class="text">
+                            <p>超万平方米仓储体验店</p>
+                            <p>上海松江区茂盛路202弄18号</p>
+                            <p>客服邮箱：kf@goujiuwang.com</p>
+                        </div>
+                        <div class="ewm">
+                            <img src="img/qrcode_06.jpg.png" alt="">
+                            <p>扫码二维码 享更多手机专享优惠</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_h_bottom">
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd>
+                            <a href="">用户协议</a>
+                        </dd>
+                        <dd>
+                            <a href="">常见问题</a>
+                        </dd>
+                        <dd>
+                            <a href="">网站购物流程</a>
+                        </dd>
+                        <dd>
+                            <a href="">会员制度</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>如何付款</dt>
+                        <dd>
+                            <a href="">如何付款</a>
+                        </dd>
+                        <dd>
+                            <a href="">发票制度说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">电子券说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">虚拟账户支付</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>配送方式</dt>
+                        <dd>
+                            <a href="">配送收费标准</a>
+                        </dd>
+                        <dd>
+                            <a href="">配送时间</a>
+                        </dd>
+                        <dd>
+                            <a href="">货到付款支持城市</a>
+                        </dd>
+                        <dd>
+                            <a href="">实体加盟服务商</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                            <a href="">如何办理退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">如何退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系客服</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd>
+                            <a href="">了解购酒网</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系我们</a>
+                        </dd>
+                        <dd>
+                            <a href="">隐私声明</a>
+                        </dd>
+                        <dd>
+                            <a href="">友情链接</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>合作共赢</dt>
+                        <dd>
+                            <a href="">品牌馆</a>
+                        </dd>
+                        <dd>
+                            <a href="">大客户采购</a>
+                        </dd>
+                        <dd>
+                            <a href="">网络推广</a>
+                        </dd>
+                        <dd>
+                            <a href="">供应商供货</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom mid_box">
+            <img src="img/baozheng_06.jpg" alt="">
+            <p>Copyright® 2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</p>
+            <div class="auth">
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="slidebar">
+        <div class="slidebar_in_top">
+            <!-- 会员中心 -->
+            <a class="hyzx" href="">
+                <span class="iconfont icon-wode"></span>
+            </a>
+            <!-- 购物车 -->
+            <a class="shop_car" href="">
+                <span class="iconfont icon-gouwuche"></span>
+                <p>购</p>
+                <p>物</p>
+                <p>车</p>
+            </a>
+            <!-- 券 -->
+            <a class="ticket" href="">
+                <span class="iconfont icon-quan"></span>
+            </a>
+            <!-- 收藏 -->
+            <a class="shoucang" href="">
+                <span class="iconfont icon-shoucang"></span>
+            </a>
+            <!-- 二维码 -->
+            <a class="erweima" href="">
+                <span class="iconfont icon-ico"></span>
+            </a>
+            <!-- 点赞 -->
+            <a class="dianzan" href="">
+                <span class="iconfont icon-dianzan"></span>
+            </a>
+            <!-- 客服 -->
+            <a class="kefu" href="">
+                <span class="iconfont icon-kefu"></span>
+            </a>
+            <!-- 反馈 -->
+            <a class="fankui" href="">
+                <span class="iconfont icon-fankui"></span>
+            </a>
+            <!-- 回到顶部 -->
+            <a class="totop" href="">
+                <span class="iconfont icon-huidaodingbu"></span>
+            </a>
+        </div>
+    </div>
+</body>
+<script>
+    (function(){
+        var tabs=document.querySelectorAll('[data-toggle=tab]');
+        for(var tab of tabs){
+            tab.onclick=function(){
+                var id=this.dataset.id;
+                var div=document.getElementById(id);
+                var brothers=div.parentNode.children;
+
+                for(var brother of brothers){
+                    brother.classList.add('hide');
+                }
+                div.classList.remove('hide');
+            }
+        }
+    })()
+</script>
+</html>

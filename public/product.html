@@ -1,0 +1,1726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购酒网</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slidebar.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/ajax.js"></script>
+    <style>
+        /* 中间部分 */
+        .center_box{
+            width:100%;
+            /* height:1000px; */
+            background:#F6F4F5;
+        }
+        .center_box>.buy_area{
+            width:1200px;
+            height:537px;
+            margin:auto;
+            background:#fff;
+        }
+        .center_box>.buy_area>.category{
+            width:100%;
+            height:50px;
+            background:#F6F4F5;
+            line-height:50px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .center_box>.buy_area>.category a{
+            font-size:12px;
+            color:#333;
+        }
+        .category .rg:before{
+            content:"> ";
+        }
+        .center_box>.buy_area>.category .name{
+            color:#797979;
+        }
+        .center_box>.buy_area>.category .zxkf{
+            background:url(img/zxkf.png);
+            display:inline-block;
+            width:88px;
+            height:20px;
+        }
+        .center_box>.buy_area>.buy_detail{
+            width:100%;
+            height:487px;
+            /* background:brown; */
+            display:flex;
+            justify-content:space-around;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left{
+            width:561px;
+            height:100%;
+            /* background:coral; */
+            display:flex;
+            flex-wrap:wrap;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left ul{
+            width:76px;
+            margin:20px 20px 0 45px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left ul li{
+            width:72px;
+            height:72px;
+            border:2px solid #eee;
+            margin:0 auto 10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left ul li:hover{
+            border:2px solid #DC3334;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left ul li img{
+            width:100%;
+            height:100%;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_big_img{
+            margin-top:20px;
+            width:400px;
+            height:400px;
+            border:1px solid #EEEEEE;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_big_img img{
+            width:100%;
+            height:100%;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share{
+            /* width:100%; */
+            /* background:#797979; */
+            position:relative;
+            top:-15px;
+            left:45px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .left_share_text{
+            font-size:13px;
+            color:#666;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_wechat,.buy_left .left_share .share_sina{
+            width:23px;
+            height:18px;
+            display:inline-block;
+            background:url(img/shareicon.png);
+            position:relative;
+            top:3px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_wechat{
+            background-position: 0px -18px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_wechat:hover{
+            background-position: 0px 0px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_sina{
+            background-position: 23px -18px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_sina:hover{
+            background-position: 23px 0px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .shoucang{
+            margin-left:244px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .share_shoucang{
+            display:inline-block;
+            width:18px;
+            height:18px;
+            color:#aeaeae;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_left .left_share .shoucang_text{
+            font-size:15px;
+            color:#666;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right{
+            width:520px;
+            height:100%;
+            /* background:darkgray; */
+            padding-top:20px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .title{
+            font-size:16px;
+            font-weight:700;
+            width:480px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .subtitle{
+            color:#e3393c;
+            font-size:14px;
+            margin-top:7px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion{
+            width:520px;
+            height:108px;
+            background:url(img/pricBg.gif);
+            margin-top:10px;
+            padding:10px 0 10px 10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .same_text{
+            font-size:12px;
+            color:#666;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .price_num{
+            font-size:24px;
+            color:#c40000;
+            margin-left:16px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .ticket_con{
+            color:#df3033;
+            font-size:12px;
+            background:#ffdedf;
+            padding:0 10px;
+            border-top:1px solid #df3033;
+            border-bottom:1px solid #df3033;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .ticket b{
+            display:inline-block;
+            width:2px;
+            height:18px;
+            background:url(img/quan-arr.gif) no-repeat;
+            position:relative;
+            top:5px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .ticket b.one{
+            left:6px;
+            margin-left:9px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .ticket b.two{
+            left:-6px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .promotion .msg_con{
+            font-size:12px;
+            color:#fff;
+            background:#c40000;
+            padding:2px;
+            margin-left:5px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .message{
+            margin-top:11px;
+        }
+        /* 配送至 */
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo{
+            width:520px;
+            height:25px;
+            /* background:#eee; */
+            margin-top:10px;
+            padding-left:10px;
+            position:relative;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .to{
+            display:inline-block;
+            padding:0 5px;
+            margin-left:10px;
+            background:#fff;
+            border:1px solid #ccc;
+            font-size:12px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .to a{
+            color:#333;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .to:hover .addrArea{
+            display:block;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .addrArea{
+            width:390px;
+            border:1px solid #ccc;
+            background:#fff;
+            padding:10px 0px 0 10px;
+            /* position:relative; */
+            position:absolute;
+            left:73px;
+            top:24px;
+            display:none;
+            z-index:99;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .addrArea>div{
+            display:flex;
+            justify-content:start;
+            margin-bottom:10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .addrArea>div p{
+            margin-right:10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .addrArea div ul li{
+            font-size:12px;
+            margin-left:5px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo .addrArea div ul li a{
+            color:#666;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo>span{
+            color:#747474;
+            font-size:12px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .transTo>img{
+            position:relative;
+            top:1px;
+            margin-left:10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay{
+            width:520px;
+            height:36px;
+            line-height:36px;
+            /* background:#ddd; */
+            margin-top:17px;
+            border-top:1px dashed #c9c9c9;
+            border-bottom:1px dashed #c9c9c9;
+            display:flex;
+            justify-content:space-around;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay>p{
+            width:170px;
+            text-align:center;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay .pay_title{
+            font-size:12px;
+            color:#b4b4b4;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay .pay_num{
+            font-weight:900;
+            font-size:12px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay .red{
+            color:#c40000;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay .green{
+            color:#228800;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .pay .line{
+            display:inline-block;
+            width:1px;
+            height:12px;
+            background:#ddd;
+            margin-top:13px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .numbox{
+            width:520px;
+            height:30px;
+            line-height:30px;
+            /* background:#aeaeae; */
+            padding-left:10px;
+            margin-top:10px;
+            display:flex;
+            justify-content: start;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .numbox input{
+            width:36px;
+            height:28px;
+            border:1px solid #c9c9c9;
+            text-align:center;
+            margin:1px 0 0 15px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .numbox div{
+            /* float:left; */
+            margin-left:4px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .numbox div span{
+            display:block;
+            width:18px;
+            height:12px;
+            border:1px solid #c9c9c9;
+            text-align:center;
+            line-height:8px;
+            margin-top:2px;
+            color:#666;
+            cursor:pointer
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox{
+            width:520px;
+            height:40px;
+            margin-top:20px;
+            /* background:#c9c9c9; */
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox a{
+            display:inline-block;
+            width:180px;
+            height:40px;
+            text-align:center;
+            line-height:40px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox .btn_buy{
+            background:rgb(252,239,238);
+            border:1px solid rgb(187,61,52);
+            color:rgb(187,61,52);
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox .btn_add{
+            background:rgb(175,35,23);
+            color:#fff;
+            position:relative;
+            top:-1px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox .btn_add span{
+            display:inline-block;
+            width:15px;
+            height:15px;
+            color:#fff;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox span{
+            font-size:13px;
+            color:#666;
+            margin-left:5px;
+            position:relative;
+            cursor:pointer;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox span:hover img{
+            display:inline-block;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox span i{
+            display:inline-block;
+            width:22px;
+            height:32px;
+            background:url(img/d-icon.png) no-repeat;
+            background-position:-95px -22px;
+            position:relative;
+            top:10px;
+        }
+        .center_box>.buy_area>.buy_detail>.buy_right .btnbox span img{
+            width:120px;
+            height:120px;
+            position:absolute;
+            top:25px;
+            left:-2px;
+            display:none;
+            box-shadow:0px 0px 5px 1px #ddd;
+        }
+        /* 大家都在买 */
+        .center_box>.every_buy{
+            width:1200px;
+            height:212px;
+            margin:auto;
+            background:#fff;
+        }
+        .center_box>.every_buy>.every_buy_title{
+            /* width:100%; */
+            height:80px;
+            line-height:80px;
+            font-size:16px;
+            color:#666;
+            margin:0 60px;
+        }
+        .center_box>.every_buy>.every_buy_box{
+            height:132px;
+            margin:0 60px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .center_box>.every_buy>.every_buy_box>div{
+            width:256px;
+            height:130px;
+            border:1px solid #EFEFEF;
+        }
+        .center_box>.every_buy>.every_buy_box>div img{
+            width:125px;
+            height:130px;
+            float:left;
+        }
+        .center_box>.every_buy>.every_buy_box>div .every_title{
+            color:#666;
+            font-size:12px;
+            display:inline-block;
+            width:120px;
+            overflow:hidden;
+            padding-top:30px;
+            position:relative;
+            left:10px;
+        }
+        .center_box>.every_buy>.every_buy_box>div .every_price{
+            font-size:13px;
+            color:#DC3334;
+            /* padding-left:10px; */
+            position:relative;
+            left:10px;
+        }
+        /* 图文详情 */
+        .center_box>.itemdetail{
+            width:1200px;
+            /* height:1000px; */
+            background:#fff;
+            margin:auto;
+        }
+        .center_box>.itemdetail>.detail_title{
+            margin:0 60px;
+            height:100px;
+            /* line-height:100px; */
+            border-bottom:2px solid #EEEEEE;
+        }
+        .center_box>.itemdetail>.detail_title span a{
+            color:#333;
+            padding:0 25px;
+            font-size:18px;
+            line-height:150px;
+        }
+        .center_box>.itemdetail>.detail_title span{
+            display:inline-block;
+            height:100px;
+        }
+        .center_box>.itemdetail>.detail_title span.active{
+            border-bottom:2px solid #DC3334;
+        }
+        .center_box>.itemdetail>.detail_sepc{
+            width:1045px;
+            height:58px;
+            margin:auto;
+            padding:35px 0 35px 35px;
+            box-sizing:content-box;
+            background:#FBFBFB;
+            display:flex;
+            justify-content:space-between;
+            flex-wrap:wrap;
+        }
+        .center_box>.itemdetail>.detail_sepc>span{
+            color:#666;
+            font-size:12px;
+            display:inline-block;
+            width:24%;
+        }
+        .center_box>.itemdetail>.detail_sepc span em{
+            display:inline-block;
+            width:15px;
+            height:15px;
+            position:relative;
+            top:2px;
+        }
+        .center_box>.itemdetail>.detail_sepc .pp em{
+            background:url(img/product/brand.png) no-repeat;
+            right:-4px;
+            top:3px;
+        }
+        .center_box>.itemdetail>.detail_sepc .spbh em{
+            background:url(img/product/number.png) no-repeat;
+            top:5px;
+            right:-2px;
+        }
+        .center_box>.itemdetail>.detail_sepc .jhl em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:-30px 0;
+            right:-3px;
+            top:4px;
+        }
+        .center_box>.itemdetail>.detail_sepc .ds em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:-30px -15px;
+            right:-5px;
+            top:3px;
+        }
+        .center_box>.itemdetail>.detail_sepc .std em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:0px -15px;
+            right:-4px;
+            top:3px;
+        }
+        .center_box>.itemdetail>.detail_sepc .xx em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:-15px -15px;
+            right:-4px;
+            top:3px;
+        }
+        .center_box>.itemdetail>.detail_sepc .xg em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:-45px 0px;
+            right:-4px;
+            top:4px;
+        }
+        .center_box>.itemdetail>.detail_sepc .gg em{
+            background:url(img/product/fonticon.png) no-repeat;
+            background-position:0px -15px;
+            right:-4px;
+            top:4px;
+        }
+        /* 图文详情 */
+        .center_box>.itemdetail>.detail_img{
+            width:1200px;
+            /* height:100px; */
+            background:#fff;
+            margin:auto;
+        }
+        .center_box>.itemdetail>.detail_img img{
+            display:block;
+            margin:auto;
+            width:790px;
+        }
+        /* 最近浏览 */
+        .center_box>.historylook{
+            width:1200px;
+            height:212px;
+            margin:auto;
+            background:#fff;
+            position:relative;
+        }
+        .center_box>.historylook>.historylook_title{
+            width:1080px;
+            height:80px;
+            margin:auto;
+            color:#666;
+            line-height:80px;
+            font-size:16px;
+        }
+        .center_box>.historylook>.historylook_box{
+            width:1080px;
+            height:132px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+        }
+        .center_box>.historylook>.historylook_box>div{
+            width:260px;
+            height:130px;
+            border:1px solid #EFEFEF;
+            font-size:13px;
+        }
+        .center_box>.historylook>.historylook_box>div img{
+            width:125px;
+            height:130px;
+            float:left;
+        }
+        .center_box>.historylook>.historylook_box>div .look_name{
+            color: #666;
+            font-size: 12px;
+            display: inline-block;
+            width: 120px;
+            overflow: hidden;
+            padding-top: 30px;
+            position: relative;
+            left: 10px;
+        }
+        .center_box>.historylook>.historylook_box>div .look_price{
+            color:#DC3334;
+            position:relative;
+            left:10px;
+        }
+        .center_box>.historylook>a{
+            font-weight:800;
+            font-size:35px;
+            color:#e3e3e3;
+            cursor:pointer;
+            position:absolute;
+        }
+        .center_box>.historylook>.prev{
+            left:10px;
+            top:118px;
+        }
+        .center_box>.historylook>.next{
+            top:118px;
+            right:10px;
+        }
+        .center_box>.itempjbox{
+            width:1200px;
+            background:#fff;
+            margin:auto;
+            padding-top:30px;
+        }
+        .center_box>.itempjbox>.itempj_title{
+            width:1080px;
+            height:148px;
+            margin:auto;
+            border:1px solid #E5E5E5;
+            padding:25px 40px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left{
+            width:229px;
+            height:100%;
+            /* background:#DC3334; */
+            border-right:1px solid #E5E5E5;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.ph_title{
+            color:#333;
+            font-size:14px;
+            margin-bottom:22px;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.empty_box{
+            width:100px;
+            height:8px;
+            background:#ccc;
+            display:inline-block;
+            position:relative;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.empty_box>.fill_box{
+            width:98%;
+            height:100%;
+            background:#DB3437;
+            display:inline-block;
+            position:absolute;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.pjbfb{
+            display:inline-block;
+            font-size:13px;
+            color:#DC3334;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.pjbfb>span{
+            font-size:17px;
+            padding:0 5px 0 20px;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_left>.ph_count{
+            margin-top:22px;
+            font-size:13px;
+            color:#999;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_center{
+            width:514px;
+            height:100%;
+            border-right:1px solid #E5E5E5;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_center>.djrw{
+            font-size:14px;
+            color:#333;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_center>.syxd{
+            font-size:13px;
+            color:#999;
+            margin-top:22px;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_right{
+            width:158.6px;
+            height:100%;
+            /* background:#ffdedf; */
+        }
+        .center_box>.itempjbox>.itempj_title>.title_right>p{
+            margin-top:22px;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_right>.sdjf{
+            font-size:13px;
+            color:#999;
+        }
+        .center_box>.itempjbox>.itempj_title>.title_right>.jsgz a{
+            color:#1376CE;
+            font-size:12px;
+        }
+        .center_box>.itempjbox>.tab_control{
+            width:1080px;
+            height:46px;
+            margin:auto;
+            background:#fff;
+            margin-top:20px;
+            border-bottom:1px solid #E5E5E5;
+        }
+        .center_box>.itempjbox>.tab_control>a{
+            display:inline-block;
+            width:150px;
+            height:100%;
+            line-height:43px;
+            font-size:12px;
+            color:#333;
+            cursor:pointer;
+            text-align:center;
+        }
+        .center_box>.itempjbox>.tab_control>a.selected{
+            border-left:1px solid #E5E5E5;
+            border-right:1px solid #E5E5E5;
+            border-top:2px solid #DB3437;
+        }
+        .center_box>.itempjbox>.tab_control>a em{
+            color:#999;
+        }
+        .center_box>.itempjbox>.pjxdbox{
+            width:1080px;
+            margin:auto;
+        }
+        .center_box>.itempjbox>.pjxdbox>.list_title{
+            width:1080px;
+            height:40px;
+            background:#f5f5f5;
+            padding-left:30px;
+            margin-top:20px;
+            line-height:40px;
+            color:#666;
+            font-size:12px;
+        }
+        .center_box>.itempjbox>.pjxdbox>.list_title span{
+            display:inline-block;
+        }
+        .center_box>.itempjbox>.pjxdbox>.list_title .pjxd{
+            width:678px;
+        }
+        .center_box>.itempjbox>.pjxdbox>.list_title .myd{
+            width:206px;  
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box{
+            position:relative;
+            height:auto;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box:after{
+           content:"";
+           display:block;
+           clear:both;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box{
+            width:1080px;
+            /* padding-left: 30px; */
+            /* margin:auto; */
+            position: relative;
+            /* top:0px; */
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div{
+            width:1080px;
+            /* padding-left:30px; */
+            /* height:87px; */
+            /* line-height:87px; */
+            padding:40px 0 40px 30px;
+            border-left:1px solid #e5e5e5;
+            border-right:1px solid #e5e5e5;
+            border-bottom:1px solid #e5e5e5;
+            font-size:12px;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div .name{
+            display:inline-block;
+            width:677px;
+            text-overflow:ellipsis;
+            white-space:nowrap;
+            overflow:hidden;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div .info{
+            margin-left:130px;
+            line-height:12px;
+            display:inline-block;
+            width:70px;
+            position:relative;
+            top:10px;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div .info .level{
+            color:#D9154B;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div .info .date{
+            color:#999;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div>p{
+            width:82px;
+            height:80px;
+            border:1px solid #CCCCCC;
+            padding:10px 0;
+            margin-top:15px;
+            vertical-align: middle;
+            cursor:url(img/big.cur),auto;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box>div>p img{
+            max-width:80px;
+            min-width:80px;
+            vertical-align: middle;
+        }
+        .center_box>.itempjbox>.pjxdbox>.com_box>.list_box.hide{
+            display:none;
+        }
+        /* 评价上一页、下一页 */
+        .center_box>.itempjbox>.pjxdbox>.pagelist{
+            width:1080px;
+            height:32px;
+            margin:auto;
+            /* background:#DC3334; */
+            margin-top:20px;
+            text-align:center;
+        }
+        .center_box>.itempjbox>.pjxdbox>.pagelist a{
+            display:inline-block;
+            padding:0 12px;
+            height:26px;
+            line-height:26px;
+            color:#666;
+            font-size:12px;
+            background:#f1eff0;
+            border-radius:2px;
+        }
+        .center_box>.itempjbox>.pjxdbox>.pagelist a.active{
+            background:#C90809;
+            color:#fff;
+            cursor:auto;
+        }
+        .center_box>.faqbox{
+            width:1200px;
+            margin:auto;
+            background:#fff;
+        }
+        .center_box>.faqbox:before{
+            display:table;
+            content:''
+        }
+        .center_box>.faqbox>.faq_title{
+            font-weight:900;
+            font-size:30px;
+            margin:50px 60px 0 60px;
+        }
+        .center_box>.faqbox>.faq_list{
+            margin:20px 0 0 60px;
+        }
+        .center_box>.faqbox>.faq_list .icon{
+            display:inline-block;
+            width:25px;
+            height:25px;
+            text-align:center;
+            border-radius: 50%;
+            margin-right:30px;
+            color:#fff;
+        }
+        .center_box>.faqbox>.faq_list .qicon{
+            background:#DC3434;
+        }
+        .center_box>.faqbox>.faq_list .aicon{
+            background:#77AFD2;
+            margin-top:12px;
+        }
+        .center_box>.faqbox>.faq_list .question{
+            font-size:17px;
+            color:#1A1A1A;
+        }
+        .center_box>.faqbox>.faq_list .answer{
+            font-size:15px;
+            display:inline-block;
+            width:900px;
+            color:#747474;
+            vertical-align: top;
+            margin:12px 0 51px;
+        }
+        .center_box>.faqbox>.faq_list .answer a{
+            display:inline-block;
+            width:88px;
+            height:20px;
+            cursor:pointer;
+            background:url(img/zxkf.png);
+        }
+    </style>
+</head>
+<body onload="show()">
+    <!-- 顶部容器，长黑框 -->
+    <div class="topNav">
+        <!-- 顶部中间部分1200px -->
+        <div class="topNavbox">
+            <!-- 顶部黑框左侧 -->
+            <div class="topNavLeft">
+                <img src="img/index/ewms.png" alt="">
+                <span>购酒网APP</span>
+                <em>﹀</em>
+            </div>
+            <!-- 顶部黑框右侧 -->
+            <div class="topNavRight">
+                <ul>
+                    <li>
+                        Hi,请
+                        <a href="">登录</a>/
+                        <a href="">注册</a>
+                    </li>
+                    <li class="other">|</li>
+                    <li><a href="">我的订单</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">个人中心</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">在线客服</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">购酒公告</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">帮助</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">提意见</a></li>
+                    <li class="other">|</li>
+                    <li>
+                        <a href="">
+                            <em>☏</em> 400-722-1919
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部黑框下长banner图 -->
+    <div class="top_img">
+        <a href="">
+            <img src="img/top_banner.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo，搜索框，购物车 -->
+    <div class="logoItems">
+        <a class='logo_img' href=""><img src="img/logo.jpg" alt=""></a>
+        <a class='activity_img' href=""><img src="img/logo-activity.gif" alt=""></a>
+        <div class='search'>
+            <div class="search_top">
+                <div class="search_top_left">
+                    <input type="text" placeholder="茅台飞天">
+                </div>
+                <div class="search_top_right">
+                    搜索
+                </div>
+            </div>
+            <div class="search_foot">
+                <ul>
+                    <li><a href="">茅台</a></li>
+                    <li><a href="">五粮液</a></li>
+                    <li><a href="">拉菲</a></li>
+                    <li><a href="">奔富</a></li>
+                    <li><a href="">洋河</a></li>
+                    <li><a href="">黄尾袋鼠</a></li>
+                    <li><a href="">剑南春</a></li>
+                    <li><a href="">泸州老窖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='shopping_car'>
+            <a class="shopping_car_nr" href="">
+                <span class="shopping_car_icon"></span>
+                <span class="shopping_car_text">去购物车结算</span>
+                <span class="shopping_car_num">0</span>
+            </a>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="itemNav">
+        <ul>
+            <li><a class="list_item" href="">☰&nbsp;全部分类</a></li>
+            <li class="nav"><a href="">首页</a></li>
+            <li class="nav"><a href="">特卖会</a></li>
+            <li class="nav"><a href="">进口馆</a></li>
+            <li class="nav"><a href="">居酒屋</a></li>
+            <li class="nav"><a href="">商家采销</a></li>
+            <li class="nav"><a href="">高端收藏</a></li>
+            <li class="nav"><a href="">茅台年份酒</a></li>
+            <li class="nav"><a href="">尾货直批</a></li>
+        </ul>
+        <div class="itemNav_right">
+            <a href="">
+                <img src="img/qctj.gif" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- 中间部分 -->
+    <div class="center_box">
+        <!-- 顶部购买区域 -->
+        <div class="buy_area">
+            <!-- 分类 -->
+            <div id="category" class="category">
+            </div>
+            <!-- 详细介绍 -->
+            <div id="buy_detail" class="buy_detail">
+                
+            </div>
+        </div>
+        <!-- 大家都在买 -->
+        <div class="every_buy">
+            <div class="every_buy_title">大家都在买</div>
+            <div class="every_buy_box">
+                <div>
+                    <a href="">
+                        <img src="img/product/every_1.jpg" alt="">
+                        <p class="every_title">【整箱装】52度 五粮迎宾酒 上品 500ml*6瓶</p>
+                        <p class="every_price">¥488</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/every_2.jpg" alt="">
+                        <p class="every_title">53度 茅台 赖茅（传承）蓝色 （ 2019年产 ）500ml</p>
+                        <p class="every_price">¥288</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/every_3.jpg" alt="">
+                        <p class="every_title">【整箱装】52度 剑南春 剑南老窖2006 500ml*6瓶</p>
+                        <p class="every_price">¥488</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/every_4.jpg" alt="">
+                        <p class="every_title">53度 习酒 窖藏1998 500ml</p>
+                        <p class="every_price">¥498</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 图文详情 -->
+        <div class="itemdetail">
+            <!-- 标题(图文详情|评价) -->
+            <div class="detail_title">
+                <span class="active"><a href>图文详情</a></span>
+                <span><a href="#pjxdbox">网友评价</a></span>
+            </div>
+            <!-- 产品规格 -->
+            <div id="detail_sepc" class="detail_sepc">
+            </div>
+            <!-- 图片详情 -->
+            <div id="detail_img" class="detail_img"></div>
+        </div>
+        <!-- 最近浏览 -->
+        <div class="historylook">
+            <div class="historylook_title">最近浏览的商品</div>
+            <div class="historylook_box">
+                <div>
+                    <a href="">
+                        <img src="img/product/history_look_1.jpg" alt="">
+                        <p class="look_name">54度 董酒 精酿大师 500ml</p>
+                        <p class="look_price">¥488</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/history_look_2.jpg" alt="">
+                        <p class="look_name">54度 董酒 精酿大师 500ml</p>
+                        <p class="look_price">¥488</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/history_look_3.jpg" alt="">
+                        <p class="look_name">54度 董酒 精酿大师 500ml</p>
+                        <p class="look_price">¥488</p>
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        <img src="img/product/history_look_4.jpg" alt="">
+                        <p class="look_name">54度 董酒 精酿大师 500ml</p>
+                        <p class="look_price">¥488</p>
+                    </a>
+                </div>
+            </div>
+            <a class="prev">＜</a>
+            <a class="next">＞</a>
+        </div>
+        <!-- 商品评价 -->
+        <div class="itempjbox">
+            <!-- 评价标题 -->
+            <div class="itempj_title">
+                <div class="title_left">
+                    <p class="ph_title">商品评价</p>
+                    <div class="empty_box">
+                        <div class="fill_box"></div>
+                    </div>
+                    <p class="pjbfb">
+                        <span>100%</span>好评
+                    </p>
+                    <p class="ph_count">共14条评价</p>
+                </div>
+                <div class="title_center">
+                    <p class="djrw">大家认为</p>
+                    <p class="syxd">暂无标签，快来分享下你的使用心得吧</p>
+                </div>
+                <div class="title_right">
+                    <p class="sdjf">有晒单的评价将获得50积分</p>
+                    <p class="jsgz"><a href="">积分规则</a></p>
+                </div>
+            </div>
+            <!-- 评价选项卡 -->
+            <div id="tab_control" class="tab_control">
+                <!-- <a class="all selected" href="">全部评价 <em>(14)</em></a>
+                <a class="shai" href="">晒单 <em>(1)</em></a> -->
+            </div>
+            <!-- 评价心得 -->
+            <div class="pjxdbox" id="pjxdbox">
+                <!-- 评价标题 -->
+                <div class="list_title">
+                    <span class="pjxd">评价心得</span>
+                    <span class="myd">满意度</span>
+                    <span class="pjyh">评价用户</span>
+                </div>
+                <div class="com_box">
+                    <!-- 所有评价内容 -->
+                    <div id="list_box" class="list_box">
+                    </div>
+                    <!-- 晒单评价 -->
+                    <div id="img_box" class="list_box hide"></div>
+                </div>
+                
+                <!-- 评价分页 -->
+                <div class="pagelist">
+                    <a class="prev" href=""><</a>
+                    <a class="active" href="">1</a>
+                    <a href="">2</a>
+                    <a class="next" href="">></a>
+                </div>
+            </div>
+        </div>
+        <!-- FAQ -->
+        <div class="faqbox">
+            <div class="faq_title">FAQ</div>
+            <div class="faq_list">
+                <div>
+                    <p>
+                        <span class="icon qicon">Q</span>
+                        <span class="question">购酒网如何保证网站所售商品均为正品?</span>
+                    </p>
+                    <p>
+                        <span class="icon aicon">A</span>
+                        <span class="answer">
+                            答：购酒网所有商品均由正规渠道进货，全程监管，保证100%原装正品。
+                            <br>
+                            我们有严格的供应商选择和监管系统，只有符合购酒网规则的供应商才能成为我们的合作供货方。例如：针对供应商，我们会考核其公司的年度报税记录，其它交易往来记录，相关货源进货凭证等文档信息。在下单前，我们还会有专人进行货源地实地考察，以确保货物品质。所以，在100%正品的购酒网网站购物，会给您带来高性价比和无后顾之忧的超值体验。
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="icon qicon">Q</span>
+                        <span class="question">如何包装？发什么快递</span>
+                    </p>
+                    <p>
+                        <span class="icon aicon">A</span>
+                        <span class="answer">
+                            答：采用多层"防冲爆"包装，大大减少配送图中对酒产生的影响，快递是按您的收货地址为您随机匹配相应的快递，大宗采购可支持原箱物流发货，如有特殊要求请致电客服热点400-722-1919协商沟通。
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="icon qicon">Q</span>
+                        <span class="question">下单后什么时候发货？大概多久可以收到商品？</span>
+                    </p>
+                    <p>
+                        <span class="icon aicon">A</span>
+                        <span class="answer">
+                            答：通常情况下，您的订单将在48小时内完成订单审核并打包出库，根据商品所在仓库不同，到货时间也略有不同，通过会员中心的订单详情可以查看订单的物流信息。
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="icon qicon">Q</span>
+                        <span class="question">怎么包装有"驰名商标"字样</span>
+                    </p>
+                    <p>
+                        <span class="icon aicon">A</span>
+                        <span class="answer">
+                            答：根据《商标法》及国家工商总局文件要求，2014年5月1日之后不得将"驰 名 商 标"字样用于商品宣传（5月1日进入流通领域的除外），厂家正在按照新规定逐步更换包装，在此期间，我们将对小酒包装货品随机发货，请以实际收到的货物为准，给您带来的不便，敬请谅解。
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <span class="icon qicon">Q</span>
+                        <span class="question">其它问题</span>
+                    </p>
+                    <p>
+                        <span class="icon aicon">A</span>
+                        <span class="answer">
+                            点击 
+                            <a href=""></a>
+                            联系专属客服，为您解答更多疑问。
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="footer_top">
+            <div class="mid_box">
+                <div class="footer_h_top">
+                    <div class="tel"></div>
+                    <a href="">
+                        <img src="img/onlineServ.png" alt="">
+                    </a>
+                    <div class="address">
+                        <div class="text">
+                            <p>超万平方米仓储体验店</p>
+                            <p>上海松江区茂盛路202弄18号</p>
+                            <p>客服邮箱：kf@goujiuwang.com</p>
+                        </div>
+                        <div class="ewm">
+                            <img src="img/qrcode_06.jpg.png" alt="">
+                            <p>扫码二维码 享更多手机专享优惠</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_h_bottom">
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd>
+                            <a href="">用户协议</a>
+                        </dd>
+                        <dd>
+                            <a href="">常见问题</a>
+                        </dd>
+                        <dd>
+                            <a href="">网站购物流程</a>
+                        </dd>
+                        <dd>
+                            <a href="">会员制度</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>如何付款</dt>
+                        <dd>
+                            <a href="">如何付款</a>
+                        </dd>
+                        <dd>
+                            <a href="">发票制度说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">电子券说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">虚拟账户支付</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>配送方式</dt>
+                        <dd>
+                            <a href="">配送收费标准</a>
+                        </dd>
+                        <dd>
+                            <a href="">配送时间</a>
+                        </dd>
+                        <dd>
+                            <a href="">货到付款支持城市</a>
+                        </dd>
+                        <dd>
+                            <a href="">实体加盟服务商</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                            <a href="">如何办理退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">如何退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系客服</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd>
+                            <a href="">了解购酒网</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系我们</a>
+                        </dd>
+                        <dd>
+                            <a href="">隐私声明</a>
+                        </dd>
+                        <dd>
+                            <a href="">友情链接</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>合作共赢</dt>
+                        <dd>
+                            <a href="">品牌馆</a>
+                        </dd>
+                        <dd>
+                            <a href="">大客户采购</a>
+                        </dd>
+                        <dd>
+                            <a href="">网络推广</a>
+                        </dd>
+                        <dd>
+                            <a href="">供应商供货</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom mid_box">
+            <img src="img/baozheng_06.jpg" alt="">
+            <p>Copyright® 2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</p>
+            <div class="auth">
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="slidebar">
+        <div class="slidebar_in_top">
+            <!-- 会员中心 -->
+            <a class="hyzx" href="">
+                <span class="iconfont icon-wode"></span>
+            </a>
+            <!-- 购物车 -->
+            <a class="shop_car" href="">
+                <span class="iconfont icon-gouwuche"></span>
+                <p>购</p>
+                <p>物</p>
+                <p>车</p>
+            </a>
+            <!-- 券 -->
+            <a class="ticket" href="">
+                <span class="iconfont icon-quan"></span>
+            </a>
+            <!-- 收藏 -->
+            <a class="shoucang" href="">
+                <span class="iconfont icon-shoucang"></span>
+            </a>
+            <!-- 二维码 -->
+            <a class="erweima" href="">
+                <span class="iconfont icon-ico"></span>
+            </a>
+            <!-- 点赞 -->
+            <a class="dianzan" href="">
+                <span class="iconfont icon-dianzan"></span>
+            </a>
+            <!-- 客服 -->
+            <a class="kefu" href="">
+                <span class="iconfont icon-kefu"></span>
+            </a>
+            <!-- 反馈 -->
+            <a class="fankui" href="">
+                <span class="iconfont icon-fankui"></span>
+            </a>
+            <!-- 回到顶部 -->
+            <a class="totop" href="">
+                <span class="iconfont icon-huidaodingbu"></span>
+            </a>
+        </div>
+    </div>
+</body>
+<script>
+    (function(){
+        // 网友评价、图文详情点击事件
+        var twxq=document.querySelector('.detail_title>span:first-child a');
+        var wypj=document.querySelector('.detail_title>span:last-child a');
+        twxq.onclick=wypj.onclick=function(){
+            twxq.parentNode.className=wypj.parentNode.className='';
+            this.parentNode.className='active';
+            
+        }
+    })();
+
+
+    function show(){
+        var urlParams=new URLSearchParams(location.search);
+        var $pid=urlParams.get('pid');
+
+        (async function(){
+            var results=await Promise.all([
+                ajax({url:'/pro/v1/productDetail/'+$pid}),
+                ajax({url:'/com/v1/comList/'+$pid}),
+                ajax({url:'/pro/v1/productFamily/'+$pid})
+            ]);
+            showResult(results);
+            // 评价列表、晒单评价选项卡切换
+            toggle_com();
+            // 小图和大图切换
+            toggle_img();
+        })()
+    }
+
+    // 小图和大图切换
+    function toggle_img(){
+        var hoverImgs=document.querySelectorAll('.buy_left>ul>li>a');
+        var bigImg=document.querySelector('.left_big_img>img');
+
+        for(var img of hoverImgs){
+            img.onmouseover=function(){
+                var imgSrc=this.children[0].src;
+                bigImg.src=imgSrc;
+            }
+        }
+    }
+
+    // 评价列表、晒单评价选项卡切换
+    function toggle_com(){
+        var tabs=document.querySelectorAll('[data-toggle=tab]');
+        var all=document.getElementsByClassName('list_box')[0];
+        var img=document.getElementsByClassName('list_box')[1];
+        var z_index=10;
+        for(var tab of tabs){
+            tab.onclick=function(){
+                all.classList.add('hide');
+                img.classList.add('hide');
+
+                var id=this.getAttribute('data-target');
+                var div=document.getElementById(id);
+
+                div.classList.remove('hide');
+
+                for(var i=0;i<this.parentNode.children.length;i++){
+                    this.parentNode.children[i].classList.remove('selected');
+                }
+                this.classList.add('selected');
+            }
+        } 
+    }
+    // 显示数据结果
+    function showResult(results){
+        var data=results[0].msg[0];
+        // -----------------------------------顶部购买信息-----------------------------------
+        var buy_content=`
+            <!-- 左侧图片列表 -->
+            <div class="buy_left">
+                <ul>
+                    <li>
+                        <a href=""><img src="${data.one}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="${data.two}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="${data.three}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="${data.four}" alt=""></a>
+                    </li>
+                    <li>
+                        <a href=""><img src="${data.five}" alt=""></a>
+                    </li>
+                </ul>
+                <div class="left_big_img">
+                    <img src="${data.one}" alt="">
+                </div>
+                <div class="left_share">
+                    <span class="left_share_text">登录分享赢好礼</span>
+                    <a class="share_wechat" href=""></a>
+                    <a class="share_sina" href=""></a>
+                    <a href="" class="shoucang">
+                        <span class="iconfont icon-shoucang share_shoucang"></span>
+                        <span class="shoucang_text">收藏商品</span>
+                    </a>
+                </div>
+            </div>
+            <!-- 右侧详细说明 -->
+            <div class="buy_right">
+                <!-- 标题 -->
+                <p class="title">${data.title}</p>
+                <p class="subtitle">${data.subtitle}</p>
+                <!-- 促销信息，价格 -->
+                <div class="promotion">
+                    <p class="price">
+                        <span class="same_text">活动价</span>
+                        <span class="price_num">¥${data.price}</span>
+                    </p>
+                    <p class="ticket">
+                        <span class="same_text">领 &nbsp; 券</span>
+                        <b class="one"></b>
+                        <span class="ticket_con">${data.ticket}</span>
+                        <b class="two"></b>
+                    </p>
+                    <p class="message">
+                        <span class="same_text">促销信息</span>
+                        <span class="msg_con">限时抢购</span>
+                    </p>
+                </div>
+                <!-- 配送至 -->
+                <div class="transTo">
+                    <span class="same_text">配 送 至:</span>
+                    <div class="to">
+                        <a href="">上海 ∨</a>
+                        <div class="addrArea">
+                            <div>
+                                <p class="same_text">华北地区:</p>
+                                <ul>
+                                    <li><a href="">北京</a></li>
+                                    <li><a href="">天津</a></li>
+                                    <li><a href="">河北省</a></li>
+                                    <li><a href="">山西省</a></li>
+                                    <li><a href="">内蒙古自治区</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">华东地区:</p>
+                                <ul>
+                                    <li><a href="">上海</a></li>
+                                    <li><a href="">江苏省</a></li>
+                                    <li><a href="">浙江省</a></li>
+                                    <li><a href="">安徽省</a></li>
+                                    <li><a href="">福建省</a></li>
+                                    <li><a href="">山东省</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">华南地区:</p>
+                                <ul>
+                                    <li><a href="">广东省</a></li>
+                                    <li><a href="">广西壮族自治区</a></li>
+                                    <li><a href="">海南省</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">华中地区:</p>
+                                <ul>
+                                    <li><a href="">江西省</a></li>
+                                    <li><a href="">河南省</a></li>
+                                    <li><a href="">湖北省</a></li>
+                                    <li><a href="">湖南省</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">西南地区:</p>
+                                <ul>
+                                    <li><a href="">重庆</a></li>
+                                    <li><a href="">四川省</a></li>
+                                    <li><a href="">贵州省</a></li>
+                                    <li><a href="">云南省</a></li>
+                                    <li><a href="">西藏自治区</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">西北地区:</p>
+                                <ul>
+                                    <li><a href="">陕西省</a></li>
+                                    <li><a href="">甘肃省</a></li>
+                                    <li><a href="">青海省</a></li>
+                                    <li><a href="">宁夏回族自治区</a></li>
+                                    <li><a href="">新疆维吾尔自治区</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="same_text">东北地区:</p>
+                                <ul>
+                                    <li><a href="">辽宁省</a></li>
+                                    <li><a href="">吉林省</a></li>
+                                    <li><a href="">黑龙江省</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <span>单笔订单不满100元，收运费10元</span>
+                    <img src="img/car.png" alt="">
+                    <span>满百包邮</span>
+                </div>
+                <!-- 关注度、评价 -->
+                <div class="pay">
+                    <p>
+                        <span class="pay_title">关注度</span>
+                        <span class="pay_num red">101906</span>
+                    </p>
+                    <span class="line"></span>
+                    <p>
+                        <span class="pay_title">累计评价</span>
+                        <span class="pay_num red">82</span>
+                    </p>
+                    <span class="line"></span>
+                    <p>
+                        <span class="pay_title">送积分</span>
+                        <span class="pay_num green">179</span>
+                    </p>
+                </div>
+                <!-- 数量 -->
+                <div class="numbox">
+                    <span class="same_text">数 &nbsp;量:</span>
+                    <input type="text" value="${data.sold_count}">
+                    <div>
+                        <span>+</span>
+                        <span>-</span>
+                    </div>
+                </div>
+                <!-- 下单 加购 -->
+                <div class="btnbox">
+                    <a href="" class="btn_buy">立即购买</a>
+                    <a href="" class="btn_add">
+                        <span class="iconfont icon-gouwuche"></span>
+                        加入购物车
+                    </a>
+                    <span>
+                        <i></i>
+                        手机下单更优惠
+                        <img src="img/APP.png" alt="">
+                    </span>
+                </div>
+            </div>
+            `;
+        // 图片详情-顶部文字
+        var detail_content=`
+            <span class="pp">
+                <em></em>
+                品牌: <span>${data.brand}</span>
+            </span>
+            <span class="spbh">
+                <em></em>
+                商品编号: <span>${data.product_id}</span>
+            </span>
+            <span class="jhl">
+                <em></em>
+                净含量: <span>${data.netContent}</span>
+            </span>
+            <span class="ds">
+                <em></em>
+                度数: <span>${data.degress}</span>
+            </span>
+            <span class="std">
+                <em></em>
+                手提袋: <span>${data.reticule}</span>
+            </span>
+            <span class="xx">
+                <em></em>
+                香型: <span>${data.aromaType}</span>
+            </span>
+            <span class="xg">
+                <em></em>
+                箱柜: <span>${data.boxGauge}</span>
+            </span>
+            <span class="gg">
+                <em></em>
+                规格: <span>${data.specs}</span>
+            </span>
+            `;
+        // 图片详情所有图片
+        var detail_content_img=``;
+        // 获取从数据库得到的图文详情字符串
+        var str=data.details;
+        // 将字符串以","分割开,得到一个数组
+        var arr=str.split(',');
+        for(var i=0;i<arr.length;i++){
+            detail_content_img+=`
+                <img src="${arr[i]}" >
+            `;
+        }
+        
+        detail_img.innerHTML=detail_content_img;
+        detail_sepc.innerHTML=detail_content;
+        buy_detail.innerHTML=buy_content;
+
+        // ------------------------------评价列表------------------------------
+        data=results[1].msg;
+        var detail_comment=``,img_comment=``;
+        var commonality=``;
+        var img_num=0;
+        for(var key in data){
+            // 格式化手机号
+            var phone=data[key].phone.replace(/^(\d{3})(\d{4})(\d{4})$/g,'$1****$2');
+            commonality=`
+            <div>
+                <span class="name">${data[key].com_content}</span>
+                <span class="myd"><img src="img/comment/star_5.png" alt=""></span>
+                <span class="info">
+                    <p class="level">普通会员</p>
+                    <p class="phone">${phone}</p>
+                    <p class="date">${data[key].com_date}</p>
+                </span>
+            `;
+            detail_comment+=commonality;
+            if(data[key].com_img!=null){
+                img_num++;
+                detail_comment+=`<p><img src="img/comment/comment1.png"></p>`;
+                img_comment+=`
+                    ${commonality}
+                    <p><img src="img/comment/comment1.png"></p>
+                    </div>
+                `;
+            }
+            detail_comment+=`</div>`;
+        }
+        list_box.innerHTML=detail_comment;
+        img_box.innerHTML=img_comment;
+
+
+        // ------------------------------评价选项卡------------------------------
+        tab_control.innerHTML=`
+            <a data-toggle="tab" data-target="list_box" class="all selected" href="javascript:;">全部评价 <em>${data.length}</em></a>
+            <a data-toggle="tab" data-target="img_box" class="shai" href="javascript:;">晒单 <em>(${img_num})</em></a>
+        `;
+
+        // -----------------------------------顶部面包屑-----------------------------------
+        data=results[2].msg;
+        var family=``;
+        for(var key in data){
+            family+=`
+                <div>
+                    <a href="">首页</a>
+                    <a class="big-kind rg" href='detail.html?fid=${data[key].fid}'>${data[key].name}</a>
+                    <a class="name rg" href="">${data[key].title}</a>
+                </div>
+                <div>
+                    <a class="zxkf" href=""></a>
+                </div>
+            `;
+        }
+        category.innerHTML=family;
+    }
+</script>
+</html>

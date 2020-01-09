@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户登陆</title>
+    <style>
+        body{
+            background-image:url(img/login_bg.gif);
+        }
+        *{
+            font-size:12px;
+            margin:0;
+        }
+        a{
+            text-decoration:none;
+        }
+        .header{
+            width:100%;
+            height:100px;
+            box-sizing:border-box;
+            padding:20px 0;
+            border-bottom:1px solid #C5C5C5;
+            background:#fff;
+        }
+        .logo{
+            float:left;
+        }
+        .help{
+            line-height: 59px;
+            float:right;
+        }
+        .zxkf{
+            padding-left:30px;
+            color:#cf0404;
+        }
+        .content{
+            width:1000px;
+            height:300px;
+            margin:auto;
+        }
+        .login{
+            margin-top:100px;
+        }
+        .login .left{
+            float:left;
+        }
+        .login .right{
+            width:438px;
+            height:437px;
+            background:#fff;
+            border:1px solid #c5c5c5;
+            float:right;
+        }
+        .login .right .czdl{
+            width:350px;
+            margin:80px auto 0;
+            color:#999;
+        }
+        .xzLeft{
+            float:left;
+        }
+        .xzRight{
+            float:right;
+        }
+        .xzRight a{
+            color:#999;
+        }
+        .czdl .top input,.czdl .bottom input{
+            width:350px;
+            height:52px;
+            border:1px solid #c5c5c5;
+            outline:none;
+            box-sizing:border-box;
+            padding-left:50px;
+        }
+        .czdl .top input{
+            border-bottom:0;
+        }
+        .czdl .bottom{
+            margin-bottom:30px;
+        }
+        .czdl .zddl{
+            height:30px;
+        }
+        .czdl .loginBtn{
+            margin-top:15px;
+        }
+        .czdl .loginBtn button{
+            width:100%;
+            height:40px;
+            clear:both;
+            background:#fe0a2e;
+            border:1px solid #dc0014;
+            font-size:15px;
+            color:#fff;
+        }
+        .right .bg{
+            width:400px;
+            height:7px;
+            background-image:url(img/dashed_bg_06.gif);
+            margin:25px auto 0;
+        }
+        .right .otherLogin{
+            width:350px;
+            height:70px;
+            margin:10px auto 0;
+        }
+        .right .otherLogin p{
+            font-size:14px;
+        }
+        .right .otherLogin a{
+            margin-right:20px;
+            display:inline-block;
+            margin-top:10px;
+        }
+        .reg{
+            text-align:right;
+            position:relative;
+            top:27px;
+        }
+        .reg a{
+            width:113px;
+            height:38px;
+            display:inline-block;
+            background:#ff0421;
+            text-align:center;
+            color:#fff;
+            line-height:38px;
+        }
+        .footer{
+            width:100%;
+            height:100px;
+            clear:both;
+            text-align:center;
+            position:relative;
+            top:100px;
+        }
+        .footer a{
+            color:#333;
+            margin:0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="header">
+            <div class="content">
+                <div class="logo">
+                    <img src="img/logo.jpg">
+                </div>
+                <div class="help">
+                    <span>您好，欢迎光临购酒网！</span>
+                    <span>帮助</span>
+                    <span class="zxkf">在线客服</span>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="login">
+                <div class="left">
+                    <img src="img/left-yh.jpg" alt="">
+                </div>
+                <div class="right">
+                    <div class="czdl">
+                        <div class="top">
+                            <input type="text" id="uname" placeholder="用户名">
+                        </div>
+                        <div class="bottom">
+                            <input type="password" id="upwd" placeholder="密码">
+                        </div>
+                        <div class="zddl">
+                            <div class="xzLeft">
+                                <input id="choose" type="checkbox">
+                                <label for="choose">自动登录</label>
+                            </div>
+                            <div class="xzRight">
+                                <a href="#">忘记密码</a>
+                            </div>
+                        </div>
+                        <div class="loginBtn">
+                            <button onclick="login()">登录</button>
+                        </div>
+                    </div>
+                    <div class="bg"></div>
+                    <div class="otherLogin">
+                        <p>使用合作登录</p>
+                        <a href=""><img src="img/qq.png" alt=""></a>
+                        <a href=""><img src="img/zfb.png" alt=""></a>
+                        <a href=""><img src="img/ico38.png" alt=""></a>
+                    </div>
+                    <div class="reg">
+                        <a href="">注册新账号</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="">关于我们</a>
+            <span>|</span>
+            <a href="">联系我们</a>
+            <span>|</span>
+            <a href="">友情链接</a>
+            <span>|</span>
+            <a href="">隐私声明</a>
+            <span>|</span><br>
+            <span>Copyright©2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</span>
+        </div>
+    </div>
+</body>
+<script>
+   function login(){
+       var xhr=new XMLHttpRequest();
+       xhr.onreadystatechange=function(){
+        if(xhr.readyState==4&&xhr.status==200){
+            var result=xhr.responseText;
+            if(result==0){//登陆失败
+                alert('用户名或密码错误')
+            }else{//登陆成功
+                alert('登陆成功');
+            }
+        }
+       }//'/user/v1/login/:uname&:upwd'
+       xhr.open('get','/user/v1/login/'+uname.value+'&'+upwd.value,true);
+       xhr.send();
+   } 
+</script>
+</html>

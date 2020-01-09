@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>用户注册</title>
+    <style>
+        body{
+            background-image:url(img/login_bg.gif);
+        }
+        *{
+            font-size:12px;
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+            color:#000;
+        }
+        .header{
+            width:100%;
+            height:100px;
+            box-sizing:border-box;
+            padding:20px 0;
+            border-bottom:1px solid #C5C5C5;
+            background:#fff;
+        }
+        .logo{
+            float:left;
+        }
+        .help{
+            line-height: 59px;
+            float:right;
+        }
+        .zxkf{
+            padding-left:30px;
+            color:#cf0404;
+        }
+        .content{
+            width:1000px;
+            height:300px;
+            margin:auto;
+        }
+        .content>.reg{
+            width:968px;
+            height:566px;
+            background:#fff;
+            margin-top:24px;
+            border:6px solid rgba(199,199,199,0.7);
+        }
+        .reg>.left{
+            width:600px;
+            height:566px;
+            background:#f5f5f5;
+            float:left;
+        }
+        .left>.regTab>ul{
+            width:515px;
+            height:35px;
+            list-style: none;
+            margin:33px auto 0;
+            border-bottom:1px solid #ddd;
+        }
+        .left>.regTab>ul>li{
+            border-right:1px solid #ddd;
+            text-align:center;
+            width:257px;
+        }
+        .regTab>ul>li>a{
+            font-size:16px;
+        }
+        .left>.regTab>.line{
+            width:257px;
+            height:3px;
+            background:#cf000d;
+            margin-left:42.5px;
+        }
+        .regTab>.reg_form{
+            width:515px;
+            height:386px;
+            margin:auto;
+            margin-top:30px;
+        }
+        .regTab>.reg_form>table{
+            width:515px;
+            margin:auto;
+        }
+        .regTab>.reg_form>table td{
+            font-size: 16px;
+        }
+        .regTab>.reg_form>table .right{
+            text-align:right;
+        }
+        .regTab>.reg_form>table .unified{
+            width:240px;
+            height:35px;
+        }
+        input{
+            outline:none;
+        }
+        table tr td{
+            padding-bottom:10px;
+            padding-left:30px;
+        }
+        table tr .special{
+            text-align:center;
+        }
+        table tr button{
+            width:346px;
+            height:40px;
+            background:#fe5a58;
+            border:1px solid #fe5a58;
+            color:#fff;
+            outline:none;
+        }
+        table tr td a{
+            color:#4b719d;
+        }
+        .reg>.right{
+            float:right;
+            margin-top:83px;
+            margin-right:35px;
+        }
+        .reg>.right>img{
+            width:300px;
+            height:356px;
+        }
+        .footer{
+            width:100%;
+            height:100px;
+            clear:both;
+            text-align:center;
+            position:relative;
+            top:100px;
+        }
+        .footer a{
+            color:#333;
+            margin:0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="content">
+            <div class="logo">
+                <img src="img/logo.jpg">
+            </div>
+            <div class="help">
+                <span>您好，欢迎光临购酒网！</span>
+                <span>帮助</span>
+                <span class="zxkf">在线客服</span>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="reg">
+            <div class="left">
+                <div class="regTab">
+                    <ul>
+                        <li><a href="">手机注册</a></li>
+                    </ul>
+                    <div class="line"></div>
+                    <div class="reg_form">
+                        <table>
+                            <tr>
+                                <td class='right'>用户名:</td>
+                                <td colspan="2"><input type="text" class="unified" id="uname"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>密码:</td>
+                                <td colspan="2"><input type="password" class="unified" id="upwd"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>确认密码:</td>
+                                <td colspan="2"><input type="password" class="unified" id="cpwd"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>邮箱:</td>
+                                <td colspan="2"><input type="text" class="unified" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>手机:</td>
+                                <td colspan="2"><input type="text" class="unified" id="phone"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>真实姓名:</td>
+                                <td colspan="2"><input type="text" class="unified" id="user_name"></td>
+                            </tr>
+                            <tr>
+                                <td class='right'>性别:</td>
+                                <td colspan="2">
+                                    <input id="man" type="radio" name="gender">
+                                    <label for="man">男</label> 
+                                    <input id="woman" type="radio" name="gender">
+                                    <label for="woman">女</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="special" colspan="3">
+                                    <span>点击注册，表示您同意购酒网</span>
+                                    <a href="">《服务协议》</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="special btnReg" colspan="3">
+                                    <button onclick="reg()">点击注册</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <a class="right" href="">
+                <img src="img/left-yh.jpg" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <a href="">关于我们</a>
+        <span>|</span>
+        <a href="">联系我们</a>
+        <span>|</span>
+        <a href="">友情链接</a>
+        <span>|</span>
+        <a href="">隐私声明</a>
+        <span>|</span><br>
+        <span>Copyright©2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</span>
+    </div>
+    <!--用户名<input id="uname" type="text"><br>
+    密码<input type="text" id="upwd"><br>
+    邮箱<input type="text" id="email"><br>
+    电话<input type="text" id="phone"><br>
+    头像<input type="text" id="avatar"><br>
+    真实姓名<input type="text" id="user_name"><br>
+    姓名<input type="text" id="gender"><br>
+    <button onclick="reg()">注册</button>
+    <div id="msg"></div>-->
+</body>
+<script>
+    function reg(){
+        var xhr=new XMLHttpRequest();
+        xhr.onreadystatechange=function(){
+            console.log(1)
+            if(xhr.readyState==4&&xhr.status==200){
+                console.log(2)
+                var result=xhr.responseText;
+                if(result==1){//注册成功
+                    alert('注册成功')
+                }else{//注册失败
+                    alert('注册失败')
+                }
+            }
+        }
+        let genders=document.getElementsByName('gender');
+        let $gender='';
+        if(genders[0].checked){
+            $gender='1';
+        }else{
+            $gender='0';
+        }
+        xhr.open('post','/user/v1/reg',true);
+        var formdata=`uid=${null}&uname=${uname.value}&upwd=${upwd.value}&email=${email.value}&phone=${phone.value}&user_name=${user_name.value}&gender=${$gender}`;
+        console.log(formdata);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        xhr.send(formdata);
+    }
+</script>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a{
+            text-decoration:none;
+        }
+        ul{
+            list-style:none;
+        }
+        ul li{
+            float:left;
+        }
+        /*顶部容器，长黑框 */
+        .topNav{
+            width:100%;
+            height:31px;
+            background:#3E3A39;
+        }
+        .topNavbox{
+            width:1200px;
+            height:30px;
+            margin:auto;
+            color:#ccc;
+            line-height:30px;
+            font-size:13px;
+            display:flex;
+            justify-content:space-between;
+        }
+        .topNavLeft{
+            width:100px;
+            height:30px;
+        }
+        .topNavLeft>img{
+            width:12px;
+            height:12px;
+        }
+        .topNavLeft>em{
+            width:13px;
+            height:30px;
+        }
+        .topNavbox>.topNavRight{
+            width:850px;
+            height:30px;
+        }
+        .topNavbox>.topNavRight>ul{
+            float:right;
+        }
+        .topNavbox>.topNavRight>ul>li>a{
+            color:#ccc;
+            padding:0 15px;
+        }
+        .topNavbox>.topNavRight>ul>li:first-child>a{
+            padding:0;
+            color:#fff600;
+        }
+        .topNavbox>.topNavRight>ul>li>a:hover{
+            color:#aaa;
+        }
+        /* 顶部黑框下长banner图 */
+        .top_img{
+            width:1200px;
+            height:80px;
+            margin:auto;
+        }
+        /* logo，搜索框，购物车 */
+        .logoItems{
+            width:1200px;
+            height:90px;
+            background:#0ff;
+            margin:auto;
+        }
+        .logoItems>.logo_img{
+            margin:26px 25px 0 0;
+        }
+        .logoItems>.activity_img{
+            margin:20px 0 0 20px;
+        }
+        .logoItems>.search{
+            width:450px;
+            height:62px;
+            background:#ccc;
+        }
+        .logoItems>.shopping_car{
+            width:141px;
+            height:36px;
+            background:#333;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部容器，长黑框 -->
+    <div class="topNav">
+        <!-- 顶部中间部分1200px -->
+        <div class="topNavbox">
+            <!-- 顶部黑框左侧 -->
+            <div class="topNavLeft">
+                <img src="img/index/ewms.png" alt="">
+                <span>购酒网APP</span>
+                <em>﹀</em>
+            </div>
+            <!-- 顶部黑框右侧 -->
+            <div class="topNavRight">
+                <ul>
+                    <li>
+                        Hi,请
+                        <a href="">登录</a>/
+                        <a href="">注册</a>
+                    </li>
+                    <li class="other">|</li>
+                    <li><a href="">我的订单</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">个人中心</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">在线客服</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">购酒公告</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">帮助</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">提意见</a></li>
+                    <li class="other">|</li>
+                    <li>
+                        <a href="">
+                                <em>☏</em>
+                                400-722-1919
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部黑框下长banner图 -->
+    <div class="top_img">
+        <a href="">
+            <img src="img/top_banner.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo，搜索框，购物车 -->
+    <div class="logoItems">
+        <a class='logo_img' href=""><img src="img/logo.jpg" alt=""></a>
+        <a class='activity_img' href=""><img src="img/logo-activity.gif" alt=""></a>
+        <div class='search'>
+
+        </div>
+        <div class='shopping_car'></div>
+    </div>
+</body>
+</html>

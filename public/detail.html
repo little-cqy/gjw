@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>品牌白酒、酱香型白酒_浓香型白酒【品牌、价格表、排名、图片】查询|专业白酒网站_购酒网官网</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/slidebar.css">
+    <link rel="stylesheet" href="css/iconfont.css">
+    <script src="js/ajax.js"></script>
+    <style>
+        /* 内容区域 */
+        /* .content_area{
+            width:1200px;
+            height:1000px;
+            margin:10px auto 0;
+        }
+        .content_area>.query_condition{
+            width:100%;
+        } */
+        
+        .content_area {
+            width: 100%;
+            margin: 10px auto 0;
+        }
+        
+        .content_area>.query_condition {
+            width: 1200px;
+            margin: auto;
+        }
+        
+        .content_area>.imgline {
+            margin: 0 auto;
+            height: 9px;
+            background-image: url(img/line.png);
+        }
+        
+        .content_area>.query_condition>.product_num {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            color: rgb(51, 51, 51);
+            border-bottom: 1px dashed rgb(212, 212, 212);
+        }
+        
+        .content_area>.query_condition>.product_num>.number {
+            color: #dd3f45;
+        }
+        
+        .query_condition>.selected {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-bottom: 1px dashed rgb(212, 212, 212);
+        }
+        
+        .query_condition>.selected>.selected_btn {
+            /* width: 50px; */
+            padding:0 3px;
+            height: 23px;
+            display: inline-block;
+            line-height: 23px;
+            background: #fff;
+            text-align: center;
+            border: 1px solid #d4d4d4;
+        }
+        
+        .query_condition .selected_yx {
+            margin-right: 30px;
+        }
+        
+        .query_condition .selected_zl {
+            color: #DD3F45;
+        }
+        
+        .query_condition .selected_xx {
+            width: 15px;
+            height: 15px;
+            display: inline-block;
+            background: #dd3f45;
+            box-sizing: border-box;
+            color: #fff;
+            position: relative;
+            line-height: 15px;
+        }
+        
+        .padding-left {
+            padding-left: 20px;
+            box-sizing: border-box;
+            color: rgb(132, 132, 132);
+            font-size: 12px;
+        }
+        
+        .query_condition .keds {
+            width: 100%;
+            /* height: 140px; */
+            border-bottom: 1px dashed rgb(212, 212, 212);
+            display:flex;
+            justify-content:start;
+        }
+        
+        .keds .keds_rqpp {
+            display: block;
+            float: left;
+            /* line-height: 140px; */
+            padding:36px 0;
+        }
+        
+        .keds .keds_pp {
+            width: 1000px;
+            padding:15px 0;
+            /* height: 120px; */
+            /* float: left; */
+            margin: 11px 0 0 30px;
+        }
+        
+        .keds .keds_pp ul li {
+            float: left;
+            margin-bottom: 7px;
+        }
+        
+        .keds .keds_pp ul li:last-child {
+            margin-bottom: 0;
+        }
+        
+        .keds .keds_pp ul li a {
+            color: #848484;
+            display: inline-block;
+            width: 98px;
+            height: 31px;
+            border: 1px solid #d4d4d4;
+            text-align: center;
+            line-height: 31px;
+        }
+        
+        .keds .keds_pp ul li a:hover {
+            background: #DD3F45;
+            color: #fff;
+        }
+        
+        .query_condition .cd {
+            width: 100%;
+            height: 54px;
+            border-bottom: 1px dashed rgb(212, 212, 212);
+        }
+        
+        .query_condition .cd .cd_cd {
+            line-height: 54px;
+            float: left;
+        }
+        
+        .query_condition .cd .province {
+            width: 1000px;
+            height: 54px;
+            float: left;
+            margin-left: 50px;
+        }
+        
+        .cd .province ul li a {
+            display: inline-block;
+            margin-right: 15px;
+            color: #848484;
+            padding: 5px 10px;
+        }
+        
+        .cd .province ul li a:hover {
+            background: #DD3F45;
+            color: #fff;
+        }
+        
+        .xx {
+            width: 100%;
+            height: 27px;
+            line-height: 27px;
+            border-bottom: 1px dashed rgb(212, 212, 212);
+        }
+        
+        .xx .xx_left {
+            float: left;
+        }
+        
+        .xx .xx_right {
+            float: left;
+            margin-left: 50px;
+        }
+        
+        .xx .xx_right ul li a {
+            color: #848484;
+            padding: 0 10px;
+            margin-right: 15px;
+        }
+        
+        .xx .xx_right ul li a:hover {
+            background: #dd3f45;
+            color: #fff;
+        }
+        
+        .gdxx {
+            width: 100%;
+            height: 65px;
+            line-height: 65px;
+        }
+        
+        .gdxx .gdxx_left {
+            float: left;
+        }
+        
+        .gdxx .gdxx_right {
+            float: left;
+            margin-left: 35px;
+        }
+        
+        .gdxx .gdxx_right>ul>li>a {
+            color: #848484;
+            display: inline-block;
+            width: 98px;
+            height: 28px;
+            border: 1px solid #d4d4d4;
+            text-align: center;
+            line-height: 28px;
+        }
+        
+        .gdxx_right ul li:nth-child(2) a {
+            border-left: 0;
+            border-right: 0;
+        }
+        
+        .gdxx_right .jjd {
+            top: 48px;
+        }
+        
+        .gdxx_right .same_style_ul {
+            width: 1100px;
+            height: 28px;
+            line-height: 28px;
+            display: none;
+            background: #fff;
+            border: 1px solid #848484;
+            position: absolute;
+        }
+        
+        .same_style_ul a {
+            padding: 0 10px;
+            color: #848484;
+        }
+        
+        .gdxx_right .same_position {
+            position: relative;
+        }
+        
+        .gdxx_right .jhl {
+            left: -100px;
+        }
+        
+        .gdxx_right .jg {
+            left: -200px;
+        }
+        
+        .same_position ul li a {
+            display: inline-block;
+            height: 28px;
+        }
+        
+        .same_position ul li a:hover {
+            background: #dd3f45;
+            color: #fff;
+        }
+        
+        .content_area .listbox {
+            width: 100%;
+            height: auto;
+            background: rgb(245, 245, 245);
+        }
+        
+        .content_area .listbox .listbox_px {
+            width: 1200px;
+            height: 90px;
+            margin: auto;
+        }
+        
+        .listbox_px span {
+            display: block;
+            float: left;
+            font-size: 13px;
+            color: rgb(51, 51, 51);
+            line-height: 90px;
+            text-indent: 25px;
+        }
+        
+        .listbox_px ul {
+            float: left;
+            margin: 32px 0 0 20px;
+            border: 1px solid #ccc;
+        }
+        
+        .listbox_px ul li a {
+            color: #333;
+            width: 84px;
+            font-size: 13px;
+            display: inline-block;
+            text-align: center;
+        }
+        
+        .listbox_px ul li {
+            border-right: 1px solid #ccc;
+        }
+        
+        .listbox_px ul li:nth-child(5) {
+            border-right: 0;
+        }
+        
+        .listbox-product {
+            width: 1200px;
+            height: auto;
+            margin: 0 auto;
+            border-top: 1px solid #ccc;
+            /* border-right:1px solid #ccc; */
+            border-left: 1px solid #ccc;
+        }
+        
+        .listbox-product::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+        
+        .listbox-product .product_desc {
+            width: 25%;
+            height: 438px;
+            background: #fff;
+            float: left;
+            /* border-left:1px solid #ccc;
+            border-bottom:1px solid #ccc; */
+            border-right: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+        
+        .product_desc:last-child {
+            border-right: 1px solid #ccc;
+        }
+        
+        .product_desc:hover {
+            border-bottom: 3px solid #DC3334;
+        }
+        
+        .listbox-product .product_desc .in_desc {
+            width: 262px;
+            height: 397px;
+            margin: 30px auto 0;
+            font-size: 12px;
+        }
+        
+        .in_desc .img {
+            margin: auto;
+            width: 230px;
+            height: 230px;
+            text-align: center;
+        }
+        
+        .in_desc .text {
+            width: 230px;
+            margin: 15px auto 0;
+        }
+        
+        .in_desc .subtitle {
+            color: #a1a1a1;
+            margin-bottom: 28px;
+        }
+        
+        .in_desc .title,
+        .in_desc .subtitle {
+            line-height: 23px;
+            width:240px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .text .price {
+            font-size: 25px;
+            color: #DC3334;
+            margin-right: 65px;
+        }
+        
+        .text .shopping_car {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            color: #fff;
+            background: #e73736;
+            text-align: center;
+            cursor: pointer;
+            position: relative;
+            top: -5px;
+        }
+        
+        .text .appraise {
+            color: #9b9b9b;
+            font-size: 12px;
+            margin-top: 15px;
+        }
+        
+        .commendlist {
+            /* width:1200px;
+            margin:auto;
+            background:#9b9b9b; */
+            width: 100%;
+            background: #fff;
+        }
+        
+        .commend_text {
+            /* width:100%; */
+            width: 1200px;
+            margin: auto;
+            height: 61px;
+            background: #fff;
+            line-height: 61px;
+            color: #a5a5a5;
+        }
+        
+        .commend_text span {
+            margin-left: 30px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body onload="show_product()">
+    <!-- 顶部容器，长黑框 -->
+    <div class="topNav">
+        <!-- 顶部中间部分1200px -->
+        <div class="topNavbox">
+            <!-- 顶部黑框左侧 -->
+            <div class="topNavLeft">
+                <img src="img/index/ewms.png" alt="">
+                <span>购酒网APP</span>
+                <em>﹀</em>
+            </div>
+            <!-- 顶部黑框右侧 -->
+            <div class="topNavRight">
+                <ul>
+                    <li>
+                        Hi,请
+                        <a href="">登录</a>/
+                        <a href="">注册</a>
+                    </li>
+                    <li class="other">|</li>
+                    <li><a href="">我的订单</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">个人中心</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">在线客服</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">购酒公告</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">帮助</a></li>
+                    <li class="other">|</li>
+                    <li><a href="">提意见</a></li>
+                    <li class="other">|</li>
+                    <li>
+                        <a href="">
+                            <em>☏</em> 400-722-1919
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 顶部黑框下长banner图 -->
+    <div class="top_img">
+        <a href="">
+            <img src="img/top_banner.jpg" alt="">
+        </a>
+    </div>
+    <!-- logo，搜索框，购物车 -->
+    <div class="logoItems">
+        <a class='logo_img' href=""><img src="img/logo.jpg" alt=""></a>
+        <a class='activity_img' href=""><img src="img/logo-activity.gif" alt=""></a>
+        <div class='search'>
+            <div class="search_top">
+                <div class="search_top_left">
+                    <input type="text" placeholder="茅台飞天">
+                </div>
+                <div class="search_top_right">
+                    搜索
+                </div>
+            </div>
+            <div class="search_foot">
+                <ul>
+                    <li><a href="">茅台</a></li>
+                    <li><a href="">五粮液</a></li>
+                    <li><a href="">拉菲</a></li>
+                    <li><a href="">奔富</a></li>
+                    <li><a href="">洋河</a></li>
+                    <li><a href="">黄尾袋鼠</a></li>
+                    <li><a href="">剑南春</a></li>
+                    <li><a href="">泸州老窖</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class='shopping_car'>
+            <a class="shopping_car_nr" href="">
+                <span class="shopping_car_icon"></span>
+                <span class="shopping_car_text">去购物车结算</span>
+                <span class="shopping_car_num">0</span>
+            </a>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="itemNav">
+        <ul>
+            <li><a class="list_item" href="">☰&nbsp;全部分类</a></li>
+            <li class="nav"><a href="">首页</a></li>
+            <li class="nav"><a href="">特卖会</a></li>
+            <li class="nav"><a href="">进口馆</a></li>
+            <li class="nav"><a href="">居酒屋</a></li>
+            <li class="nav"><a href="">商家采销</a></li>
+            <li class="nav"><a href="">高端收藏</a></li>
+            <li class="nav"><a href="">茅台年份酒</a></li>
+            <li class="nav"><a href="">尾货直批</a></li>
+        </ul>
+        <div class="itemNav_right">
+            <a href="">
+                <img src="img/qctj.gif" alt="">
+            </a>
+        </div>
+    </div>
+    <!-- 内容区域 -->
+    <div class="content_area">
+        <!-- 查询条件 -->
+        <div class="query_condition">
+            <!-- 相关商品数量 -->
+            <div id="product_num" class="product_num padding-left">
+            </div>
+            <!-- 已选条件 -->
+            <div id="selected" class="selected padding-left">
+            </div>
+            <!-- 人气品牌 -->
+            <div id="keds" class="keds padding-left">
+                <!-- <span class="keds_rqpp">人气品牌:</span>
+                <div class="keds_pp">
+                    <ul>
+                        <li><a href="">茅台</a></li>
+                        <li><a href="">五粮液</a></li>
+                        <li><a href="">剑南春</a></li>
+                        <li><a href="">泸州老窖</a></li>
+                        <li><a href="">郎酒</a></li>
+                        <li><a href="">洋河</a></li>
+                        <li><a href="">汾酒</a></li>
+                        <li><a href="">酒鬼</a></li>
+                        <li><a href="">习酒</a></li>
+                        <li><a href="">水井坊</a></li>
+                        <li><a href="">西凤</a></li>
+                        <li><a href="">珍酒</a></li>
+                        <li><a href="">古井贡酒</a></li>
+                        <li><a href="">舒心</a></li>
+                        <li><a href="">白云边</a></li>
+                        <li><a href="">景芝</a></li>
+                        <li><a href="">牛栏山</a></li>
+                        <li><a href="">舍得</a></li>
+                        <li><a href="">沱牌</a></li>
+                        <li><a href="">金六福</a></li>
+                        <li><a href="">生态源竹酒</a></li>
+                        <li><a href="">口子窖</a></li>
+                        <li><a href="">伊力牌</a></li>
+                        <li><a href="">小糊涂仙</a></li>
+                        <li><a href="">今世缘</a></li>
+                        <li><a href="">四特</a></li>
+                        <li><a href="">国台</a></li>
+                        <li><a href="">衡水老白干</a></li>
+                        <li><a href="">枝江</a></li>
+                        <li><a href="">文君酒</a></li>
+                    </ul>
+                </div> -->
+            </div>
+            <!-- 产地 -->
+            <div class="cd padding-left">
+                <span class="cd_cd">产地:</span>
+                <div class="province">
+                    <ul>
+                        <li><a href="">贵州</a></li>
+                        <li><a href="">四川</a></li>
+                        <li><a href="">山西</a></li>
+                        <li><a href="">江苏</a></li>
+                        <li><a href="">安徽</a></li>
+                        <li><a href="">北京</a></li>
+                        <li><a href="">内蒙古</a></li>
+                        <li><a href="">山东</a></li>
+                        <li><a href="">河北</a></li>
+                        <li><a href="">湖南</a></li>
+                        <li><a href="">新疆</a></li>
+                        <li><a href="">湖北</a></li>
+                        <li><a href="">黑龙江</a></li>
+                        <li><a href="">江西</a></li>
+                        <li><a href="">陕西</a></li>
+                        <li><a href="">吉林</a></li>
+                        <li><a href="">广东</a></li>
+                        <li><a href="">河南</a></li>
+                        <li><a href="">台湾</a></li>
+                        <li><a href="">上海</a></li>
+                        <li><a href="">青海</a></li>
+                        <li><a href="">西藏</a></li>
+                        <li><a href="">重庆</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 香型 -->
+            <div class="xx padding-left">
+                <span class="xx_left">香型:</span>
+                <div class="xx_right">
+                    <ul>
+                        <li><a href="">酱香型</a></li>
+                        <li><a href="">浓香型</a></li>
+                        <li><a href="">清香型</a></li>
+                        <li><a href="">凤香型</a></li>
+                        <li><a href="">馥郁型</a></li>
+                        <li><a href="">董香型</a></li>
+                        <li><a href="">特香型</a></li>
+                        <li><a href="">芝麻香</a></li>
+                        <li><a href="">兼香型</a></li>
+                        <li><a href="">金门香</a></li>
+                        <li><a href="">老干白</a></li>
+                        <li><a href="">绵柔型</a></li>
+                        <li><a href="">其他</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 更多选项 -->
+            <div class="gdxx padding-left">
+                <span class="gdxx_left">更多选项:</span>
+                <div class="gdxx_right">
+                    <ul>
+                        <li class="same_position">
+                            <a id="jjd" href="">酒精度 ▼</a>
+                            <ul id="jjd_ul" class="jjd  same_style_ul">
+                                <li><a href="">35度以下</a></li>
+                                <li><a href="">35-39度</a></li>
+                                <li><a href="">40-49度</a></li>
+                                <li><a href="">50度以上</a></li>
+                            </ul>
+                        </li>
+                        <li class="same_position">
+                            <a id="jhl" href="">净含量 ▼</a>
+                            <ul class="jhl same_style_ul">
+                                <li><a href="">475ML以下</a></li>
+                                <li><a href="">475ML-500ML</a></li>
+                                <li><a href="">500ML</a></li>
+                                <li><a href="">500ML-1L</a></li>
+                                <li><a href="">1L-1.5L</a></li>
+                                <li><a href="">1.5L以上</a></li>
+                            </ul>
+                        </li>
+                        <li class="same_position">
+                            <a id="jg" href="">价格 ▼</a>
+                            <ul class="jg same_style_ul">
+                                <li><a href="">1-99</a></li>
+                                <li><a href="">100-199</a></li>
+                                <li><a href="">200-599</a></li>
+                                <li><a href="">600-999</a></li>
+                                <li><a href="">1000-1999</a></li>
+                                <li><a href="">2000-5999</a></li>
+                                <li><a href="">6000及以上</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="imgline"></div>
+        <!-- 下面灰色背景部分 -->
+        <div class="listbox">
+            <!-- 排序 -->
+            <div class="listbox_px">
+                <span>排序:</span>
+                <ul>
+                    <li><a href="">综合</a></li>
+                    <li><a href="">销量</a></li>
+                    <li><a href="">价格</a></li>
+                    <li><a href="">评价数</a></li>
+                    <li><a href="">上新时间</a></li>
+                </ul>
+            </div>
+            <!-- 商品列表 -->
+            <div id="product_list" class="listbox-product">
+                <!-- <div class="product_desc">
+                    <div class="in_desc">
+                        <div class="img">
+                            <img src="img/detail/bj_1.jpg" alt="">
+                        </div>
+                        <div class="text">
+                            <p class="title">53度 茅台 飞天带杯（2019年产）500ml</p>
+                            <p class="subtitle">茅台飞天 自营保真</p>
+                            <span class="price">¥2530</span>
+                            <a class="shopping_car">加入购物车</a>
+                            <p class="appraise">评价：486条</p>
+                        </div>
+                    </div>
+                </div>
+                 -->
+            </div>
+            <!-- 大家都在买 -->
+            <div class="commendlist">
+                <div class="commend_text">
+                    <span>大家都在买</span>
+                </div>
+                <div class="listbox-product">
+                    <div class="product_desc">
+                        <div class="in_desc">
+                            <div class="img">
+                                <img src="img/detail/bj_1.jpg" alt="">
+                            </div>
+                            <div class="text">
+                                <p class="title">53度 茅台 飞天带杯（2019年产）500ml</p>
+                                <p class="subtitle">茅台飞天 自营保真</p>
+                                <span class="price">¥2530</span>
+                                <a class="shopping_car">加入购物车</a>
+                                <p class="appraise">评价：486条</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="footer_top">
+            <div class="mid_box">
+                <div class="footer_h_top">
+                    <div class="tel"></div>
+                    <a href="">
+                        <img src="img/onlineServ.png" alt="">
+                    </a>
+                    <div class="address">
+                        <div class="text">
+                            <p>超万平方米仓储体验店</p>
+                            <p>上海松江区茂盛路202弄18号</p>
+                            <p>客服邮箱：kf@goujiuwang.com</p>
+                        </div>
+                        <div class="ewm">
+                            <img src="img/qrcode_06.jpg.png" alt="">
+                            <p>扫码二维码 享更多手机专享优惠</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer_h_bottom">
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd>
+                            <a href="">用户协议</a>
+                        </dd>
+                        <dd>
+                            <a href="">常见问题</a>
+                        </dd>
+                        <dd>
+                            <a href="">网站购物流程</a>
+                        </dd>
+                        <dd>
+                            <a href="">会员制度</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>如何付款</dt>
+                        <dd>
+                            <a href="">如何付款</a>
+                        </dd>
+                        <dd>
+                            <a href="">发票制度说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">电子券说明</a>
+                        </dd>
+                        <dd>
+                            <a href="">虚拟账户支付</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>配送方式</dt>
+                        <dd>
+                            <a href="">配送收费标准</a>
+                        </dd>
+                        <dd>
+                            <a href="">配送时间</a>
+                        </dd>
+                        <dd>
+                            <a href="">货到付款支持城市</a>
+                        </dd>
+                        <dd>
+                            <a href="">实体加盟服务商</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                            <a href="">如何办理退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">如何退换货</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系客服</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>关于我们</dt>
+                        <dd>
+                            <a href="">了解购酒网</a>
+                        </dd>
+                        <dd>
+                            <a href="">联系我们</a>
+                        </dd>
+                        <dd>
+                            <a href="">隐私声明</a>
+                        </dd>
+                        <dd>
+                            <a href="">友情链接</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>合作共赢</dt>
+                        <dd>
+                            <a href="">品牌馆</a>
+                        </dd>
+                        <dd>
+                            <a href="">大客户采购</a>
+                        </dd>
+                        <dd>
+                            <a href="">网络推广</a>
+                        </dd>
+                        <dd>
+                            <a href="">供应商供货</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom mid_box">
+            <img src="img/baozheng_06.jpg" alt="">
+            <p>Copyright® 2009-2019 gjw.com, All Rights Reserved 购酒网(上海)供应链管理有限公司 版权所有</p>
+            <div class="auth">
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="slidebar">
+        <div class="slidebar_in_top">
+            <!-- 会员中心 -->
+            <a class="hyzx" href="">
+                <span class="iconfont icon-wode"></span>
+            </a>
+            <!-- 购物车 -->
+            <a class="shop_car" href="">
+                <span class="iconfont icon-gouwuche"></span>
+                <p>购</p>
+                <p>物</p>
+                <p>车</p>
+            </a>
+            <!-- 券 -->
+            <a class="ticket" href="">
+                <span class="iconfont icon-quan"></span>
+            </a>
+            <!-- 收藏 -->
+            <a class="shoucang" href="">
+                <span class="iconfont icon-shoucang"></span>
+            </a>
+            <!-- 二维码 -->
+            <a class="erweima" href="">
+                <span class="iconfont icon-ico"></span>
+            </a>
+            <!-- 点赞 -->
+            <a class="dianzan" href="">
+                <span class="iconfont icon-dianzan"></span>
+            </a>
+            <!-- 客服 -->
+            <a class="kefu" href="">
+                <span class="iconfont icon-kefu"></span>
+            </a>
+            <!-- 反馈 -->
+            <a class="fankui" href="">
+                <span class="iconfont icon-fankui"></span>
+            </a>
+            <!-- 回到顶部 -->
+            <a class="totop" href="">
+                <span class="iconfont icon-huidaodingbu"></span>
+            </a>
+        </div>
+    </div>
+</body>
+<script>
+    // 显示商品列表
+    function show_product() {
+        var urlParams=new URLSearchParams(location.search);
+        var $fid=urlParams.get('fid');
+
+        (async function(){
+            var result=await Promise.all([
+                ajax({url:'/pro/v1/productClass/'+$fid}),
+                ajax({url:'/pro/v1/productFamilyName/'+$fid}),
+                ajax({url:'/pro/v1/productBrand/'+$fid})
+            ]);
+            showResult(result);
+        })();
+        
+        function showResult(result){
+            var data = result[0].msg;
+            var content = "",kind="",condition="",brands="";
+            for (var i = 0; i < data.length; i++) {
+                content += `
+                    <div class="product_desc">
+                        <div class="in_desc">
+                            <div class="img">
+                                <img src="${data[i].one}" alt="">
+                            </div>
+                            <div class="text">
+                                <!-- 主标题 -->
+                                <p class="title">${data[i].title}</p>
+                                <!-- 副标题 -->
+                                <p class="subtitle">${data[i].subtitle==null?'·':data[i].subtitle}</p>
+                                <!-- 价格 -->
+                                <span class="price">¥${data[i].price}</span>
+                                <!-- 加入购物车 -->
+                                <a class="shopping_car">加入购物车</a>
+                                <!-- 评价 -->
+                                <p class="appraise">评价：486条</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            // ------------------------------------已选条件------------------------------------
+            var kindData=result[1].msg;
+            kind=`
+                “<span class="kind">${kindData[0].name}</span>”有
+                <span class="number">${data.length}</span>条相关商品
+            `;
+            condition=`
+                <span class="selected_yx">已选条件:</span>
+                <a class="selected_btn" href="index.html">
+                    <span class="selected_zl">${kindData[0].name}</span>
+                    <span class="selected_xx">✖</span>
+                </a>
+            `;
+
+            // ------------------------------------人气品牌------------------------------------
+            var brandData=result[2].msg;
+            brands=`
+                <span class="keds_rqpp">人气品牌:</span>
+                <div class="keds_pp">
+                    <ul>
+            `;
+            for(var i=0;i<brandData.length;i++){
+                brands+=`
+                    <li><a href="">${brandData[i].name}</a></li>
+                `;
+            }
+            brands+=`
+                </ul>
+            </div>
+            `;
+            console.log(brandData);
+
+            product_list.innerHTML = content;
+            product_num.innerHTML = kind;
+            selected.innerHTML = condition;
+            keds.innerHTML = brands;
+        }
+
+    }
+        
+</script>
+
+</html>
